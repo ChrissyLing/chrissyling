@@ -45,13 +45,23 @@
             overflow-x: hidden;
         }
 
-        .reveal {
+        /* 无 JS 时内容默认可见；有 JS 后再做渐入动画 */
+        html.js .reveal:not(.visible),
+        html.js .exp-card:not(.visible),
+        html.js .side-project-card:not(.visible) {
             opacity: 0;
             transform: translateY(24px);
+        }
+
+        .reveal,
+        .exp-card,
+        .side-project-card {
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
-        .reveal.visible {
+        .reveal.visible,
+        .exp-card.visible,
+        .side-project-card.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -500,13 +510,6 @@
                         opacity 0.55s ease,
                         border-color 0.45s ease,
                         box-shadow 0.45s ease;
-            opacity: 0;
-            transform: translateY(28px);
-        }
-
-        .exp-card.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .exp-card:nth-child(even) {
@@ -974,7 +977,144 @@
         }
 
         .ai-info h3 { font-size: 1.8rem; margin-bottom: 10px; color: var(--accent-pink); }
-        .ai-tech { display: flex; gap: 10px; margin-top: 15px; }
+        .ai-tech { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+
+        .projects-subtitle {
+            font-family: 'Plus Jakarta Sans', 'Noto Sans SC', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin: 56px 0 24px;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+        }
+
+        .side-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .side-projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .side-project-card {
+            --proj-accent: var(--accent-pink);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            transition: transform 0.45s ease, opacity 0.45s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+            overflow: hidden;
+        }
+
+        .side-project-card--preview {
+            padding-top: 0;
+        }
+
+        .side-project-preview {
+            margin: 0 -28px 4px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.25);
+        }
+
+        .side-project-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+            transition: transform 0.45s ease;
+        }
+
+        .side-project-card--preview:hover .side-project-preview img {
+            transform: scale(1.03);
+        }
+
+        .side-project-card--preview .side-project-body {
+            padding-top: 4px;
+        }
+
+        .side-project-body {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            flex: 1;
+        }
+
+        .side-project-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .side-project-card:hover {
+            transform: translateY(-4px);
+            border-color: color-mix(in srgb, var(--proj-accent) 35%, rgba(255,255,255,0.1));
+            box-shadow: 0 16px 40px -16px color-mix(in srgb, var(--proj-accent) 30%, transparent);
+        }
+
+        .side-project-card[data-theme="ielts"] { --proj-accent: #7c9cff; }
+        .side-project-card[data-theme="school"] { --proj-accent: #6ee7b7; }
+        .side-project-card[data-theme="travel"] { --proj-accent: #fbbf24; }
+        .side-project-card[data-theme="daily"] { --proj-accent: #c084fc; }
+
+        .side-project-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--proj-accent);
+            background: color-mix(in srgb, var(--proj-accent) 14%, transparent);
+            border: 1px solid color-mix(in srgb, var(--proj-accent) 28%, transparent);
+        }
+
+        .side-project-card h4 {
+            font-family: 'Plus Jakarta Sans', 'Noto Sans SC', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.01em;
+        }
+
+        .side-project-card p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            flex: 1;
+        }
+
+        .side-project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .side-project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--proj-accent);
+            text-decoration: none;
+            transition: gap 0.2s ease;
+        }
+
+        .side-project-link:hover {
+            gap: 12px;
+        }
 
         .iframe-container {
             width: 100%;
@@ -1451,8 +1591,9 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section id="projects" class="reveal">
         <h2 class="section-title" data-zh="核心项目" data-en="Core Projects">核心项目</h2>
+        <p class="section-lead" data-zh="从 AI Agent 到独立 Web 小工具——用代码把真实需求变成可运行的产品。" data-en="From AI agents to standalone web tools — turning real needs into runnable products through code.">从 AI Agent 到独立 Web 小工具——用代码把真实需求变成可运行的产品。</p>
         <div class="ai-project">
             <div class="ai-header">
                 <div class="ai-info">
@@ -1506,6 +1647,94 @@
             <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-muted); text-align: center;"
                data-zh="👇 体验完整的 AI 雅思教学流程 👇"
                data-en="👇 Experience the full AI IELTS tutoring workflow 👇">👇 体验完整的 AI 雅思教学流程 👇</p>
+        </div>
+
+        <h3 class="projects-subtitle" data-zh="更多 Coding 尝试" data-en="More Coding Experiments">更多 Coding 尝试</h3>
+        <div class="side-projects-grid">
+            <article class="side-project-card side-project-card--preview" data-theme="ielts">
+                <div class="side-project-preview">
+                    <img src="portfolio_images/project_ielts_review.png" alt="雅思错题本界面预览">
+                </div>
+                <div class="side-project-body">
+                    <div class="side-project-header">
+                        <div class="side-project-icon"><i class="fas fa-book-open"></i></div>
+                        <h4 data-zh="雅思错题本" data-en="IELTS Mistake Notebook">雅思错题本</h4>
+                    </div>
+                    <p class="bilingual">
+                        <span class="lang-zh">自用备考工具：收录听力/阅读错题与生词，支持截图 AI 识别录入、闪卡间隔复习与 JSON 备份。数据存于本地浏览器，可部署分享。</span>
+                        <span class="lang-en lang-hidden">A personal prep tool for logging listening/reading mistakes and vocabulary — with AI screenshot capture, spaced-repetition flashcards, and JSON backup. Data stays in-browser; deployable to share.</span>
+                    </p>
+                    <div class="side-project-tags">
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">LocalStorage</span>
+                        <span class="skill-tag">Vision API</span>
+                    </div>
+                    <a href="https://github.com/ChrissyLing/ielts-review-app" target="_blank" rel="noopener noreferrer" class="side-project-link">
+                        <span data-zh="查看仓库" data-en="View Repo">查看仓库</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="side-project-card side-project-card--preview" data-theme="school">
+                <div class="side-project-preview">
+                    <img src="portfolio_images/project_study_finder.png" alt="留学选校助手界面预览">
+                </div>
+                <div class="side-project-body">
+                    <div class="side-project-header">
+                        <div class="side-project-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h4 data-zh="留学选校助手" data-en="Study Program Finder">留学选校助手</h4>
+                    </div>
+                    <p class="bilingual">
+                        <span class="lang-zh">纯静态选校对比工具：收录 180+ 英美港新项目，支持地区/方向筛选、性价比排序、Reach/Match/Safety 背景评估，以及收藏与对比队列。</span>
+                        <span class="lang-en lang-hidden">A static school comparison tool with 180+ UK/US/HK/SG programs — region &amp; major filters, value ranking, Reach/Match/Safety assessment, favorites and compare queue.</span>
+                    </p>
+                    <div class="side-project-tags">
+                        <span class="skill-tag">HTML / JS</span>
+                        <span class="skill-tag">JSON</span>
+                        <span class="skill-tag">No Backend</span>
+                    </div>
+                    <a href="https://github.com/ChrissyLing/study-program-finder" target="_blank" rel="noopener noreferrer" class="side-project-link">
+                        <span data-zh="查看仓库" data-en="View Repo">查看仓库</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="side-project-card" data-theme="daily">
+                <div class="side-project-icon"><i class="fas fa-calendar-check"></i></div>
+                <h4 data-zh="雅思每日背词" data-en="IELTS Daily Vocab">雅思每日背词</h4>
+                <p class="bilingual">
+                    <span class="lang-zh">轻量背单词页面：按天打卡推进词表，追踪学习进度，适合碎片时间巩固雅思核心词汇。</span>
+                    <span class="lang-en lang-hidden">A lightweight daily vocab page — progress through word lists day by day, tracking study streaks for IELTS core vocabulary.</span>
+                </p>
+                <div class="side-project-tags">
+                    <span class="skill-tag">Vanilla JS</span>
+                    <span class="skill-tag">JSON</span>
+                </div>
+                <a href="https://github.com/ChrissyLing/ielts-daily-study" target="_blank" rel="noopener noreferrer" class="side-project-link">
+                    <span data-zh="查看仓库" data-en="View Repo">查看仓库</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </article>
+
+            <article class="side-project-card" data-theme="travel">
+                <div class="side-project-icon"><i class="fas fa-compass"></i></div>
+                <h4 data-zh="TripLens · AI 旅游搜索" data-en="TripLens · AI Travel Search">TripLens · AI 旅游搜索</h4>
+                <p class="bilingual">
+                    <span class="lang-zh">面向 Gen Z 的 AI 搜索 Demo：根据意图自动切换「攻略 / 探店 / 预订 / 直达」四种结果页，探索意图识别与结果编排的产品形态。</span>
+                    <span class="lang-en lang-hidden">An AI search demo for Gen Z — auto-switches among Guide / Explore / Book / Direct result pages based on intent, exploring product patterns for search orchestration.</span>
+                </p>
+                <div class="side-project-tags">
+                    <span class="skill-tag">Next.js</span>
+                    <span class="skill-tag">Intent Routing</span>
+                    <span class="skill-tag">LLM</span>
+                </div>
+                <a href="https://github.com/ChrissyLing/triplens-ai-search" target="_blank" rel="noopener noreferrer" class="side-project-link">
+                    <span data-zh="查看仓库" data-en="View Repo">查看仓库</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </article>
         </div>
     </section>
 
@@ -1613,68 +1842,61 @@
             if (btn) btn.classList.add('active');
         }
 
-        // Nav scroll highlight
-        const navLinks = document.querySelectorAll('#main-nav a');
-        const navSections = [...navLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-
-        const navObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    const link = document.querySelector(`#main-nav a[href="#${entry.target.id}"]`);
-                    if (link) link.classList.add('active');
-                }
-            });
-        }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
-
-        navSections.forEach(s => navObserver.observe(s));
-
-        // Section reveal
-        document.querySelectorAll('.reveal').forEach(el => {
-            const obs = new IntersectionObserver(([e]) => {
-                if (e.isIntersecting) { el.classList.add('visible'); obs.unobserve(el); }
-            }, { threshold: 0.1 });
-            obs.observe(el);
-        });
-
-        // Photo lightbox
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        document.querySelectorAll('#photo .gallery-item img, #viz .gallery-item img').forEach(img => {
-            img.closest('.gallery-item').addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightboxImg.alt = img.alt;
-                lightbox.classList.add('open');
-                lightbox.setAttribute('aria-hidden', 'false');
-            });
-        });
-        const closeLightbox = () => {
-            lightbox.classList.remove('open');
-            lightbox.setAttribute('aria-hidden', 'true');
-        };
-        lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
-
-        // Experience cards scroll reveal
-        const expObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    expObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-
-        document.querySelectorAll('.exp-card').forEach((card, i) => {
-            card.style.transitionDelay = `${i * 0.1}s`;
-            expObserver.observe(card);
-        });
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
+        function initPage() {
+            document.documentElement.classList.add('js');
             type();
-        });
+
+            // 首屏及以下区块立即可见，避免 file:// 打开时长时间空白
+            document.querySelectorAll('.reveal, .exp-card, .side-project-card').forEach(el => {
+                el.classList.add('visible');
+            });
+
+            // Nav scroll highlight
+            const navLinks = document.querySelectorAll('#main-nav a');
+            const navSections = [...navLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+            if (navSections.length && 'IntersectionObserver' in window) {
+                const navObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            navLinks.forEach(l => l.classList.remove('active'));
+                            const link = document.querySelector(`#main-nav a[href="#${entry.target.id}"]`);
+                            if (link) link.classList.add('active');
+                        }
+                    });
+                }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+                navSections.forEach(s => navObserver.observe(s));
+            }
+
+            // Photo lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            if (lightbox && lightboxImg) {
+                document.querySelectorAll('#photo .gallery-item img, #viz .gallery-item img').forEach(img => {
+                    const item = img.closest('.gallery-item');
+                    if (!item) return;
+                    item.addEventListener('click', () => {
+                        lightboxImg.src = img.src;
+                        lightboxImg.alt = img.alt;
+                        lightbox.classList.add('open');
+                        lightbox.setAttribute('aria-hidden', 'false');
+                    });
+                });
+                const closeLightbox = () => {
+                    lightbox.classList.remove('open');
+                    lightbox.setAttribute('aria-hidden', 'true');
+                };
+                const closeBtn = lightbox.querySelector('.lightbox-close');
+                if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+                lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+                document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initPage);
+        } else {
+            initPage();
+        }
     </script>
 </body>
 </html>

@@ -12,6 +12,22 @@
 5. **技能** - 硬核技能 / AI效能 / 内容设计 三大模块
 6. **联系方式**
 
+## 本地预览
+
+项目路径含空格，**不建议直接双击** `index.html`。请用本地服务器：
+
+```bash
+cd "/Users/bytedance/Desktop/cursor draft/personal_website_for_codex"
+./start-local.sh
+```
+
+或手动：
+
+```bash
+python3 -m http.server 5500
+# 浏览器打开 http://localhost:5500
+```
+
 ## 版本说明
 - 中英文双语切换（英文名：Chrissy）
 - 打字机效果、lightbox 等交互动画
