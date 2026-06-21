@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="祝凌昀 2027 Fall 硕士项目申请与入读决策看板。">
+  <meta name="theme-color" content="#0c1220">
+  <title>祝凌昀 · 2027 Fall 选校决策</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="hero">
+    <nav class="topbar" aria-label="页面导航">
+      <a class="brand" href="../">ZLY<span>·</span>Decision Lab</a>
+      <a class="back-link" href="../">返回个人主页 <span aria-hidden="true">↗</span></a>
+    </nav>
+
+    <div class="hero-grid">
+      <section class="hero-copy">
+        <p class="eyebrow">2027 FALL · MASTER'S SELECTION</p>
+        <h1>不是“能不能申”，<br>而是<span>拿到后值不值得去。</span></h1>
+        <p class="hero-lead">
+          基于真实成绩单、实习经历与留美目标，对每个项目分别判断申请价值和入读价值。
+          STEM 是时间窗口，不是就业保证。
+        </p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#decision-board">开始比较</a>
+          <button class="ghost-button" id="open-priority" type="button">只看优先入读</button>
+        </div>
+      </section>
+
+      <aside class="profile-panel" aria-label="申请者画像">
+        <div class="panel-kicker">APPLICANT PROFILE</div>
+        <div class="profile-title">祝凌昀 · 北京外国语大学</div>
+        <p>国际商务本科 · 2027.07 毕业</p>
+        <div class="profile-stats">
+          <div><strong>3.47</strong><span>GPA / 4.0</span></div>
+          <div><strong>85.73</strong><span>加权均分</span></div>
+          <div><strong>4</strong><span>段核心实习</span></div>
+          <div><strong>36</strong><span>项目记录</span></div>
+        </div>
+        <div class="profile-path">
+          <span>内容洞察</span><i>→</i><span>品牌传播</span><i>→</i><span>产品分析</span><i>→</i><span>平台治理</span>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="principles" aria-labelledby="principles-title">
+      <div class="section-heading compact">
+        <p class="eyebrow">DECISION LENS</p>
+        <h2 id="principles-title">同一把尺子，四个问题</h2>
+      </div>
+      <div class="principle-grid">
+        <article><span>01</span><h3>背景是否自然</h3><p>课程、实习和项目能否形成可信故事，而不是临时包装。</p></article>
+        <article><span>02</span><h3>岗位是否清楚</h3><p>毕业后能否说出具体岗位，以及学位与岗位为何相关。</p></article>
+        <article><span>03</span><h3>留美是否可执行</h3><p>综合 STEM、学制、招聘窗口、雇主可读性与身份限制。</p></article>
+        <article><span>04</span><h3>录取后是否真想读</h3><p>把学校 title 与课程、成本、职业方向分开判断。</p></article>
+      </div>
+    </section>
+
+    <section class="board" id="decision-board" aria-labelledby="board-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PROGRAM BOARD</p>
+          <h2 id="board-title">全项目决策看板</h2>
+        </div>
+        <p class="board-note">点击项目展开完整分析。标记“待确认”的信息应在申请或缴纳押金前向项目方复核。</p>
+      </div>
+
+      <div class="toolbar" aria-label="项目筛选器">
+        <label class="search-field">
+          <span class="sr-only">搜索项目</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+          <input id="search" type="search" placeholder="搜索学校、项目或岗位">
+        </label>
+        <label>
+          <span>方向</span>
+          <select id="category-filter"><option value="all">全部方向</option></select>
+        </label>
+        <label>
+          <span>入读建议</span>
+          <select id="verdict-filter"><option value="all">全部建议</option></select>
+        </label>
+        <label>
+          <span>STEM 证据</span>
+          <select id="evidence-filter"><option value="all">全部状态</option></select>
+        </label>
+        <label>
+          <span>排序</span>
+          <select id="sort-order">
+            <option value="recommended">综合建议</option>
+            <option value="profile">背景匹配</option>
+            <option value="stay">留美路径</option>
+            <option value="name">项目名称</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="result-bar">
+        <p><strong id="result-count">0</strong> 个项目</p>
+        <div>
+          <button id="expand-all" type="button">全部展开</button>
+          <button id="collapse-all" type="button">全部折叠</button>
+        </div>
+      </div>
+
+      <div id="program-list" class="program-list" aria-live="polite"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <p>没有匹配的项目。</p>
+        <button type="button" id="clear-filters">清除筛选</button>
+      </div>
+    </section>
+
+    <section class="notice" aria-label="重要说明">
+      <div>
+        <p class="eyebrow">BEFORE YOU COMMIT</p>
+        <h2>最终确认三件事</h2>
+      </div>
+      <ol>
+        <li><span>01</span><p><strong>准确项目名称</strong>：不要把学院、track 和正式学位混为一谈。</p></li>
+        <li><span>02</span><p><strong>I-20 与 CIP code</strong>：这是 STEM OPT 判断的最终依据。</p></li>
+        <li><span>03</span><p><strong>国际生就业结果</strong>：看岗位、地区、赞助和毕业去向，不只看学校排名。</p></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>祝凌昀 · 2027 Fall 选校决策</p>
+    <p>最后整理：2026.06 · 本页为决策辅助，不构成录取、签证或就业保证。</p>
+  </footer>
+
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

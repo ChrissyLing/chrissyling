@@ -3,6 +3,7 @@
 ## 网站结构
 - 单文件网站：所有 HTML / CSS / JS 都内联在 `index.html` 里
 - 图片：全部放在项目根目录 `portfolio_images/` 文件夹中，与 `index.html` 同级
+- 选校决策页：`selection/`，可通过 `/selection/` 独立访问
 
 ## 主要模块
 1. **Hero** - 重庆夜景全屏背景 + 打字机动效（策略运营 / 新媒体运营 / 内容创作 / 摄影）
@@ -28,6 +29,12 @@ python3 -m http.server 5500
 # 浏览器打开 http://localhost:5500
 ```
 
+只看选校决策页，也可以运行：
+
+```bash
+./selection/open-local.sh
+```
+
 ## 版本说明
 - 中英文双语切换（英文名：Chrissy）
 - 打字机效果、lightbox 等交互动画
@@ -36,3 +43,4 @@ python3 -m http.server 5500
 ## GitHub Pages 部署
 - 仓库：[ChrissyLing/chrissyling](https://github.com/ChrissyLing/chrissyling)
 - 站点：https://chrissyling.github.io/chrissyling/（或仓库 Settings → Pages 中配置的地址）
+- 选校页：https://chrissyling.github.io/chrissyling/selection/
