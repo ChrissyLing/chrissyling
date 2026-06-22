@@ -186,6 +186,7 @@ main > section { width: 100%; max-width: 1380px; margin: 0 auto; }
 .program-title-wrap { min-width: 0; }
 .program-category { margin-bottom: 5px; color: var(--muted); font-size: 11px; letter-spacing: .08em; }
 .program-title { margin: 0; font-size: clamp(17px, 1.8vw, 22px); line-height: 1.35; }
+.program-title-cn { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
 .badges { display: flex; gap: 7px; flex-wrap: wrap; justify-content: flex-end; }
 .badge { padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); font-size: 11px; white-space: nowrap; }
 .badge.priority { color: var(--mint); border-color: rgba(114,214,178,.35); background: rgba(114,214,178,.08); }
