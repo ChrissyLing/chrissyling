@@ -58,6 +58,7 @@
             <div class="score-box evidence-box">
               <strong>STEM / 身份证据 · ${escapeHtml(item.evidence)}</strong>
               <p>${escapeHtml(item.stem)}</p>
+              ${item.officialUrl ? `<a class="official-link" href="${escapeHtml(item.officialUrl)}" target="_blank" rel="noreferrer">学校官网证据 ↗</a>` : ""}
             </div>
           </div>
           <div class="analysis-grid">
