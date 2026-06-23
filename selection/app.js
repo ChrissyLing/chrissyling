@@ -6,6 +6,7 @@
   const emptyState = document.querySelector("#empty-state");
   const resultCount = document.querySelector("#result-count");
   const projectTotal = document.querySelector("#project-total");
+  const applyOverview = document.querySelector("#apply-overview");
   const search = document.querySelector("#search");
   const schoolFilter = document.querySelector("#school-filter");
   const categoryFilter = document.querySelector("#category-filter");
@@ -13,6 +14,15 @@
   const evidenceFilter = document.querySelector("#evidence-filter");
   const sortOrder = document.querySelector("#sort-order");
 
+  const applyOrder = ["主申", "冲刺", "彩票", "保底", "降级", "剔除"];
+  const applyClass = {
+    "主申": "main",
+    "冲刺": "reach",
+    "彩票": "lottery",
+    "保底": "safety",
+    "降级": "downgrade",
+    "剔除": "remove"
+  };
   const verdictRank = { "优先入读": 4, "有条件可读": 3, "只作备选": 2, "不建议入读": 1 };
   const badgeClass = { "优先入读": "priority", "有条件可读": "conditional", "只作备选": "backup", "不建议入读": "reject" };
   const programMeta = {
@@ -94,6 +104,28 @@
   evidenceFilter.insertAdjacentHTML("beforeend", ["已核实", "部分核实", "待确认", "非美国项目"].map(option).join(""));
   if (projectTotal) projectTotal.textContent = String(data.length);
 
+  let activeApplyBucket = "all";
+
+  function renderApplyOverview() {
+    if (!applyOverview) return;
+    const counts = applyOrder.map((label) => ({
+      label,
+      count: data.filter((item) => item.apply === label).length
+    })).filter((entry) => entry.count > 0);
+
+    applyOverview.innerHTML = `
+      <button type="button" class="apply-chip ${activeApplyBucket === "all" ? "is-active" : ""}" data-apply-chip="all">
+        <span>全部项目</span>
+        <strong>${data.length}</strong>
+      </button>
+      ${counts.map((entry) => `
+        <button type="button" class="apply-chip ${applyClass[entry.label] || ""} ${activeApplyBucket === entry.label ? "is-active" : ""}" data-apply-chip="${escapeHtml(entry.label)}">
+          <span>${escapeHtml(entry.label)}</span>
+          <strong>${entry.count}</strong>
+        </button>`).join("")}
+    `;
+  }
+
   function scoreBox(label, score) {
     const safeScore = Math.max(0, Math.min(5, Number(score) || 0));
     return `
@@ -112,11 +144,12 @@
       <details class="program-card" data-verdict="${escapeHtml(item.enroll)}">
         <summary>
           <div class="program-title-wrap">
-            <div class="program-category">${escapeHtml(item.cat)} · 申请 ${escapeHtml(item.apply)}</div>
+            <div class="program-category">${escapeHtml(item.cat)}</div>
             <h3 class="program-title">${escapeHtml(item.name)}</h3>
             ${meta ? `<p class="program-title-cn">${escapeHtml(meta.schoolZh)}｜${escapeHtml(meta.programZh)}</p>` : ""}
           </div>
           <div class="badges">
+            <span class="apply-pill ${applyClass[item.apply] || "remove"}">${escapeHtml(item.apply)}</span>
             <span class="badge ${badgeClass[item.enroll] || "backup"}">${escapeHtml(item.enroll)}</span>
             <span class="badge">${escapeHtml(item.evidence)}</span>
           </div>
@@ -165,6 +198,7 @@
         item.bottomLine
       ].join(" ").toLocaleLowerCase("zh-CN");
       return (!query || haystack.includes(query))
+        && (activeApplyBucket === "all" || item.apply === activeApplyBucket)
         && (school === "all" || getSchoolName(item) === school)
         && (category === "all" || item.cat === category)
         && (verdict === "all" || item.enroll === verdict)
@@ -179,9 +213,31 @@
     });
   }
 
+  function renderGroupedSections(items) {
+    const groups = applyOrder
+      .map((label) => ({ label, items: items.filter((item) => item.apply === label) }))
+      .filter((group) => group.items.length > 0);
+
+    return groups.map((group) => `
+      <section class="apply-section" data-apply-section="${escapeHtml(group.label)}">
+        <div class="apply-section-head">
+          <div>
+            <p class="apply-section-kicker">APPLICATION BUCKET</p>
+            <h3>${escapeHtml(group.label)}</h3>
+          </div>
+          <span class="apply-section-count">${group.items.length} 个项目</span>
+        </div>
+        <div class="apply-section-list">
+          ${group.items.map(cardTemplate).join("")}
+        </div>
+      </section>
+    `).join("");
+  }
+
   function render() {
     const filtered = getFilteredData();
-    list.innerHTML = filtered.map(cardTemplate).join("");
+    renderApplyOverview();
+    list.innerHTML = renderGroupedSections(filtered);
     resultCount.textContent = String(filtered.length);
     emptyState.hidden = filtered.length !== 0;
     list.hidden = filtered.length === 0;
@@ -189,6 +245,7 @@
 
   function resetFilters() {
     search.value = "";
+    activeApplyBucket = "all";
     schoolFilter.value = "all";
     categoryFilter.value = "all";
     verdictFilter.value = "all";
@@ -212,6 +269,12 @@
     verdictFilter.value = "优先入读";
     render();
     document.querySelector("#decision-board").scrollIntoView({ behavior: "smooth" });
+  });
+  applyOverview?.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-apply-chip]");
+    if (!button) return;
+    activeApplyBucket = button.getAttribute("data-apply-chip") || "all";
+    render();
   });
 
   render();
