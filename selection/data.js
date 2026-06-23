@@ -130,24 +130,6 @@ window.SELECTION_DATA = [
     "bottomLine": "这是最像你未来而非过去的项目之一，建议放在核心申请组合。"
   },
   {
-    "name": "Duke Kunshan — MMS",
-    "cat": "产品/战略/管理",
-    "apply": "保底",
-    "enroll": "只作备选",
-    "profileFit": 3,
-    "stayFit": 1,
-    "stem": "美国 OPT 资格不能按 Duke 本校项目类推",
-    "evidence": "待确认",
-    "roles": "管理培训、咨询、市场/运营",
-    "fitReason": "泛商科能容纳你的履历，但你已经明确不喜欢纯 management。",
-    "stayReason": "学习地点、F-1 身份、在美时长与学位授予方式都会影响 OPT；它不能被当成美国留美保底。",
-    "risks": [
-      "项目身份和培养模式必须由校方书面解释",
-      "中介的‘同一毕业证=同一美国就业权利’推理不成立"
-    ],
-    "bottomLine": "可以作为学历保险，但不要因 Duke 名称把它误算成美国 STEM/OPT 方案。"
-  },
-  {
     "name": "Columbia SPS — MS Enterprise Risk Management",
     "cat": "产品/战略/管理",
     "apply": "主申",
@@ -254,42 +236,6 @@ window.SELECTION_DATA = [
       "成本高、同类国际学生竞争集中"
     ],
     "bottomLine": "兼顾岗位清晰度、STEM 与求职时间，是你的核心主申之一。"
-  },
-  {
-    "name": "UNC Kenan-Flagler — MS Business Analytics",
-    "cat": "BA/数据分析",
-    "apply": "保底",
-    "enroll": "有条件可读",
-    "profileFit": 4,
-    "stayFit": 3.7,
-    "stem": "项目形态与 STEM 待重新确认",
-    "evidence": "待确认",
-    "roles": "商业分析、运营分析、咨询、BI",
-    "fitReason": "方向匹配，但当前画布没有明确项目链接、全日制形态与国际生口径。",
-    "stayReason": "只有全日制 F-1、STEM 和招聘资源都成立时，才具备你需要的留美价值。",
-    "risks": [
-      "先确认项目是否为你可申请的全日制 on-campus 项目",
-      "不要仅凭商学院名称当保底"
-    ],
-    "bottomLine": "项目身份核清前暂不占申请名额。"
-  },
-  {
-    "name": "Notre Dame / UC Irvine — MS Business Analytics",
-    "cat": "BA/数据分析",
-    "apply": "保底",
-    "enroll": "有条件可读",
-    "profileFit": 3.8,
-    "stayFit": 3.8,
-    "stem": "两校项目通常按 STEM 管理，需分别确认",
-    "evidence": "部分核实",
-    "roles": "商业分析、营销/运营分析、咨询",
-    "fitReason": "都是可承接你数据实习的稳健分析项目，但不能继续合并成一个决策。",
-    "stayReason": "UCI 的南加州地理位置与 Notre Dame 的校友网络各有优势，需比较项目长度、实习窗口和就业结果。",
-    "risks": [
-      "必须拆成两个项目分别查课程与就业",
-      "二选一即可，避免堆叠相似保底"
-    ],
-    "bottomLine": "作为最后一档风险分散合理；最终只留就业数据更透明、学制更友好的一所。"
   },
   {
     "name": "UC Berkeley — MaCSS",
@@ -475,24 +421,6 @@ window.SELECTION_DATA = [
       "新加坡应届国际生求职同样依赖雇主"
     ],
     "bottomLine": "是港新中较符合你未来方向的组合，但不能替代美国 STEM 申请。"
-  },
-  {
-    "name": "HKUST — Marketing / Global Operations / International Management",
-    "cat": "港·新",
-    "apply": "保底",
-    "enroll": "只作备选",
-    "profileFit": 3.7,
-    "stayFit": 0,
-    "stem": "不适用美国 STEM/OPT",
-    "evidence": "非美国项目",
-    "roles": "营销、供应链/运营、管理培训",
-    "fitReason": "Marketing 与 Global Operations 尚能承接履历，International Management 过泛。",
-    "stayReason": "仅提供香港就业路径。",
-    "risks": [
-      "项目之间不可混为一谈",
-      "所谓‘学校调性不合’不是严谨录取证据"
-    ],
-    "bottomLine": "可做香港保险，优先具体岗位导向的 Marketing/Operations。"
   },
   {
     "name": "NUS — Information Studies / Sustainable Healthcare Management",

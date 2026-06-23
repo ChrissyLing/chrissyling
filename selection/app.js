@@ -33,7 +33,6 @@
     "Cornell Dyson — MPS AEM": { school: "Cornell", schoolZh: "康奈尔大学戴森学院", programZh: "应用经济与管理专业硕士" },
     "Northwestern McCormick — MS Project Management": { school: "Northwestern", schoolZh: "西北大学麦考密克工学院", programZh: "项目管理理学硕士" },
     "NYU Tandon — MS Management of Technology": { school: "NYU", schoolZh: "纽约大学坦登工程学院", programZh: "技术管理理学硕士" },
-    "Duke Kunshan — MMS": { school: "Duke Kunshan", schoolZh: "昆山杜克大学", programZh: "管理学硕士" },
     "Columbia SPS — MS Enterprise Risk Management": { school: "Columbia", schoolZh: "哥伦比亚大学职业研究学院", programZh: "企业风险管理理学硕士" },
     "Columbia SPS — MS Applied Analytics": { school: "Columbia", schoolZh: "哥伦比亚大学职业研究学院", programZh: "应用分析理学硕士" },
     "Duke Fuqua — MQM Business Analytics": { school: "Duke", schoolZh: "杜克大学福库阿商学院", programZh: "管理学硕士（商业分析）", projectUrl: "https://www.fuqua.duke.edu/programs/mqm-business-analytics" },
@@ -47,16 +46,6 @@
       ]
     },
     "USC Marshall — MS Business Analytics": { school: "USC", schoolZh: "南加州大学马歇尔商学院", programZh: "商业分析理学硕士", projectUrl: "https://www.marshall.usc.edu/programs/graduate-programs/specialized-masters/ms-business-analytics" },
-    "UNC Kenan-Flagler — MS Business Analytics": { school: "UNC", schoolZh: "北卡罗来纳大学教堂山分校凯南-弗拉格勒商学院", programZh: "商业分析理学硕士" },
-    "Notre Dame / UC Irvine — MS Business Analytics": {
-      school: "Notre Dame / UC Irvine",
-      schoolZh: "圣母大学 / 加州大学欧文分校",
-      programZh: "商业分析理学硕士",
-      projectLinks: [
-        { label: "Notre Dame MSBA 官网", url: "https://mendoza.nd.edu/graduate-programs/business-analytics-msba/" },
-        { label: "UC Irvine MSBA 官网", url: "https://merage.uci.edu/programs/masters/master-science-business-analytics/index.html" }
-      ]
-    },
     "UC Berkeley — MaCSS": { school: "UC Berkeley", schoolZh: "加州大学伯克利分校", programZh: "计算社会科学硕士", projectUrl: "https://macss.berkeley.edu/" },
     "Columbia GSAS — QMSS": { school: "Columbia", schoolZh: "哥伦比亚大学文理研究生院", programZh: "社会科学定量方法硕士", projectUrl: "https://qmss.columbia.edu/" },
     "UChicago — MACSS": { school: "UChicago", schoolZh: "芝加哥大学", programZh: "计算社会科学文学硕士", projectUrl: "https://macss.uchicago.edu/" },
@@ -67,16 +56,13 @@
     "Yale Jackson — Master in Public Policy in Global Affairs": { school: "Yale", schoolZh: "耶鲁大学杰克逊全球事务学院", programZh: "全球事务公共政策硕士" },
     "CUHK — Marketing / Management / IST Management": { school: "CUHK", schoolZh: "香港中文大学", programZh: "市场营销 / 管理学 / 信息系统管理" },
     "NTU — Project Management / TIP": { school: "NTU", schoolZh: "南洋理工大学", programZh: "项目管理 / TIP（科技创业与创新）" },
-    "HKUST — Marketing / Global Operations / International Management": { school: "HKUST", schoolZh: "香港科技大学", programZh: "市场营销 / 全球运营 / 国际管理" },
     "NUS — Information Studies / Sustainable Healthcare Management": { school: "NUS", schoolZh: "新加坡国立大学", programZh: "信息研究 / 可持续医疗管理" },
     "HKU — E-commerce & Internet Computing": { school: "HKU", schoolZh: "香港大学", programZh: "电子商务与互联网计算" },
     "CMU Heinz — MISM-BIDA Pathway": { school: "CMU", schoolZh: "卡内基梅隆大学海因茨学院", programZh: "信息系统管理硕士 BIDA 方向" },
     "Penn — MEDS / 环境数据科学（准确名称待核）": { school: "Penn", schoolZh: "宾夕法尼亚大学", programZh: "MEDS / 环境数据科学（准确名称待核）" },
     "BU / JHU — Quantitative or Mathematical Finance": { school: "BU / JHU", schoolZh: "波士顿大学 / 约翰斯·霍普金斯大学", programZh: "定量金融或数学金融" },
     "Columbia — Statistics / Actuarial Science": { school: "Columbia", schoolZh: "哥伦比亚大学", programZh: "统计学 / 精算科学" },
-    "USC — Accounting / Spatial Economics": { school: "USC", schoolZh: "南加州大学", programZh: "会计学 / 空间经济学" },
-    "UCI Merage — MS Business Analytics": { school: "UC Irvine", schoolZh: "加州大学欧文分校梅拉吉商学院", programZh: "商业分析理学硕士", projectUrl: "https://merage.uci.edu/programs/masters/master-science-business-analytics/index.html" },
-    "Notre Dame Mendoza — MS Business Analytics": { school: "Notre Dame", schoolZh: "圣母大学门多萨商学院", programZh: "商业分析理学硕士", projectUrl: "https://mendoza.nd.edu/graduate-programs/business-analytics-msba/" }
+    "USC — Accounting / Spatial Economics": { school: "USC", schoolZh: "南加州大学", programZh: "会计学 / 空间经济学" }
   };
 
   const escapeHtml = (value) => String(value ?? "")
@@ -129,10 +115,40 @@
   function scoreBox(label, score) {
     const safeScore = Math.max(0, Math.min(5, Number(score) || 0));
     return `
-      <div class="score-box">
-        <div class="score-label"><span>${escapeHtml(label)}</span><strong>${safeScore.toFixed(1)} / 5</strong></div>
+      <article class="detail-stat-card">
+        <div class="detail-card-head"><span>${escapeHtml(label)}</span><strong>${safeScore.toFixed(1)} / 5</strong></div>
         <div class="meter" aria-label="${escapeHtml(label)} ${safeScore.toFixed(1)} 分"><i style="width:${safeScore * 20}%"></i></div>
-      </div>`;
+      </article>`;
+  }
+
+  function detailTextCard(title, content, linkHtml = "") {
+    return `
+      <article class="detail-info-card">
+        <div class="detail-info-head">
+          <h5>${escapeHtml(title)}</h5>
+          ${linkHtml}
+        </div>
+        <div class="detail-info-body">${content}</div>
+      </article>`;
+  }
+
+  function renderStatusNotices(item) {
+    const notices = [];
+    if (item.evidence === "待确认" || item.evidence === "部分核实") {
+      notices.push(`
+        <div class="detail-notice warn">
+          <strong>待复核提醒</strong>
+          <p>这条项目仍有官网信息待确认，申请前请再次核对项目名称、学制、STEM / I-20 与最新招生页面。</p>
+        </div>`);
+    }
+    if (item.evidence === "非美国项目") {
+      notices.push(`
+        <div class="detail-notice muted">
+          <strong>路径提醒</strong>
+          <p>这条项目不服务美国 OPT / 留美路径，应按香港或新加坡本地就业逻辑单独判断，不要和美国项目混算。</p>
+        </div>`);
+    }
+    return notices.join("");
   }
 
   function cardTemplate(item) {
@@ -140,6 +156,10 @@
     const meta = getProgramMeta(item);
     const projectLinks = getProjectLinks(item);
     const evidenceIsSeparate = item.officialUrl && !projectLinks.some((link) => link.url === item.officialUrl);
+    const linkHtml = (projectLinks.length || item.officialUrl) ? `<div class="detail-link-row">
+      ${projectLinks.map((link) => `<a class="official-link action-link" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)} ↗</a>`).join("")}
+      ${evidenceIsSeparate ? `<a class="official-link action-link" href="${escapeHtml(item.officialUrl)}" target="_blank" rel="noreferrer">学校官网证据 ↗</a>` : ""}
+    </div>` : "";
     return `
       <details class="program-card" data-verdict="${escapeHtml(item.enroll)}">
         <summary>
@@ -155,25 +175,56 @@
           </div>
         </summary>
         <div class="program-content">
-          <div class="score-grid">
-            ${scoreBox("背景匹配", item.profileFit)}
-            ${scoreBox("留美路径", item.stayFit)}
-            <div class="score-box evidence-box">
-              <strong>STEM / 身份证据 · ${escapeHtml(item.evidence)}</strong>
-              <p>${escapeHtml(item.stem)}</p>
-              ${(projectLinks.length || item.officialUrl) ? `<div class="evidence-links">
-                ${projectLinks.map((link) => `<a class="official-link" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)} ↗</a>`).join("")}
-                ${evidenceIsSeparate ? `<a class="official-link" href="${escapeHtml(item.officialUrl)}" target="_blank" rel="noreferrer">学校官网证据 ↗</a>` : ""}
-              </div>` : ""}
+          <section class="detail-panel">
+            <div class="detail-grid detail-grid-4">
+              ${scoreBox("背景匹配", item.profileFit)}
+              ${scoreBox("留美路径", item.stayFit)}
+              <article class="detail-stat-card">
+                <div class="detail-card-head"><span>申请梯度</span><strong>${escapeHtml(item.apply)}</strong></div>
+                <div class="detail-pill-row">
+                  <span class="apply-pill ${applyClass[item.apply] || "remove"}">${escapeHtml(item.apply)}</span>
+                  <span class="badge ${badgeClass[item.enroll] || "backup"}">${escapeHtml(item.enroll)}</span>
+                </div>
+                <p class="detail-note">${escapeHtml(item.bottomLine)}</p>
+              </article>
+              <article class="detail-stat-card detail-stat-card-wide">
+                <div class="detail-card-head"><span>STEM / 身份证据</span><strong>${escapeHtml(item.evidence)}</strong></div>
+                <p class="detail-note">${escapeHtml(item.stem)}</p>
+                ${linkHtml}
+              </article>
             </div>
-          </div>
-          <div class="analysis-grid">
-            <section class="analysis-block"><h4>目标岗位</h4><p>${escapeHtml(item.roles)}</p></section>
-            <section class="analysis-block"><h4>为什么像你</h4><p>${escapeHtml(item.fitReason)}</p></section>
-            <section class="analysis-block"><h4>留美逻辑</h4><p>${escapeHtml(item.stayReason)}</p></section>
-            <section class="analysis-block"><h4>主要风险</h4><ul>${risks}</ul></section>
-            <section class="analysis-block conclusion"><h4>一句话结论</h4><p>${escapeHtml(item.bottomLine)}</p></section>
-          </div>
+          </section>
+
+          ${renderStatusNotices(item)}
+
+          <section class="detail-section">
+            <div class="detail-section-head">
+              <div>
+                <p class="detail-section-kicker">READING FRAME</p>
+                <h4>就读与职业判断</h4>
+              </div>
+              <p>按岗位、匹配度、留美逻辑和风险四个角度拆开看，不把 title 当结论。</p>
+            </div>
+            <div class="detail-grid detail-grid-2">
+              ${detailTextCard("目标岗位", `<p>${escapeHtml(item.roles)}</p>`)}
+              ${detailTextCard("为什么像你", `<p>${escapeHtml(item.fitReason)}</p>`)}
+              ${detailTextCard("留美逻辑", `<p>${escapeHtml(item.stayReason)}</p>`)}
+              ${detailTextCard("主要风险", `<ul>${risks}</ul>`)}
+            </div>
+          </section>
+
+          <section class="detail-section detail-section-accent">
+            <div class="detail-section-head">
+              <div>
+                <p class="detail-section-kicker">BOTTOM LINE</p>
+                <h4>一句话结论</h4>
+              </div>
+            </div>
+            <div class="detail-highlight">
+              <p>${escapeHtml(item.bottomLine)}</p>
+              ${linkHtml}
+            </div>
+          </section>
         </div>
       </details>`;
   }
