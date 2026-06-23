@@ -28,10 +28,25 @@
     "Columbia SPS — MS Applied Analytics": { school: "Columbia", schoolZh: "哥伦比亚大学职业研究学院", programZh: "应用分析理学硕士" },
     "Duke Fuqua — MQM Business Analytics": { school: "Duke", schoolZh: "杜克大学福库阿商学院", programZh: "管理学硕士（商业分析）", projectUrl: "https://www.fuqua.duke.edu/programs/mqm-business-analytics" },
     "Johns Hopkins Carey — BAAI": { school: "Johns Hopkins", schoolZh: "约翰斯·霍普金斯大学凯瑞商学院", programZh: "商业分析与人工智能理学硕士", projectUrl: "https://carey.jhu.edu/programs/master-science-programs/ms-business-analytics-and-artificial-intelligence" },
-    "University of Michigan — Ross MBAn / Applied Economics": { school: "Michigan", schoolZh: "密歇根大学", programZh: "罗斯商业分析硕士 / 应用经济学", projectUrl: "https://michiganross.umich.edu/graduate/master-of-business-analytics" },
+    "University of Michigan — Ross MBAn / Applied Economics": {
+      school: "Michigan",
+      schoolZh: "密歇根大学",
+      programZh: "罗斯商业分析硕士 / 应用经济学",
+      projectLinks: [
+        { label: "Ross MBAn 官网", url: "https://michiganross.umich.edu/graduate/master-of-business-analytics" }
+      ]
+    },
     "USC Marshall — MS Business Analytics": { school: "USC", schoolZh: "南加州大学马歇尔商学院", programZh: "商业分析理学硕士", projectUrl: "https://www.marshall.usc.edu/programs/graduate-programs/specialized-masters/ms-business-analytics" },
     "UNC Kenan-Flagler — MS Business Analytics": { school: "UNC", schoolZh: "北卡罗来纳大学教堂山分校凯南-弗拉格勒商学院", programZh: "商业分析理学硕士" },
-    "Notre Dame / UC Irvine — MS Business Analytics": { school: "Notre Dame / UC Irvine", schoolZh: "圣母大学 / 加州大学欧文分校", programZh: "商业分析理学硕士" },
+    "Notre Dame / UC Irvine — MS Business Analytics": {
+      school: "Notre Dame / UC Irvine",
+      schoolZh: "圣母大学 / 加州大学欧文分校",
+      programZh: "商业分析理学硕士",
+      projectLinks: [
+        { label: "Notre Dame MSBA 官网", url: "https://mendoza.nd.edu/graduate-programs/business-analytics-msba/" },
+        { label: "UC Irvine MSBA 官网", url: "https://merage.uci.edu/programs/masters/master-science-business-analytics/index.html" }
+      ]
+    },
     "UC Berkeley — MaCSS": { school: "UC Berkeley", schoolZh: "加州大学伯克利分校", programZh: "计算社会科学硕士", projectUrl: "https://macss.berkeley.edu/" },
     "Columbia GSAS — QMSS": { school: "Columbia", schoolZh: "哥伦比亚大学文理研究生院", programZh: "社会科学定量方法硕士", projectUrl: "https://qmss.columbia.edu/" },
     "UChicago — MACSS": { school: "UChicago", schoolZh: "芝加哥大学", programZh: "计算社会科学文学硕士", projectUrl: "https://macss.uchicago.edu/" },
@@ -65,7 +80,13 @@
   const unique = (key) => [...new Set(data.map((item) => item[key]))].filter(Boolean);
   const getProgramMeta = (item) => programMeta[item.name] || null;
   const getSchoolName = (item) => getProgramMeta(item)?.school || item.name.split(" — ")[0];
-  const getProjectUrl = (item) => getProgramMeta(item)?.projectUrl || item.officialUrl || "";
+  const getProjectLinks = (item) => {
+    const meta = getProgramMeta(item);
+    if (Array.isArray(meta?.projectLinks) && meta.projectLinks.length) return meta.projectLinks;
+    if (meta?.projectUrl) return [{ label: "项目官网", url: meta.projectUrl }];
+    if (item.officialUrl) return [{ label: "项目官网 / 官网证据", url: item.officialUrl }];
+    return [];
+  };
 
   schoolFilter.insertAdjacentHTML("beforeend", [...new Set(data.map((item) => getSchoolName(item)))].filter(Boolean).sort((a, b) => a.localeCompare(b, "en")).map(option).join(""));
   categoryFilter.insertAdjacentHTML("beforeend", unique("cat").map(option).join(""));
@@ -85,8 +106,8 @@
   function cardTemplate(item) {
     const risks = (item.risks || []).map((risk) => `<li>${escapeHtml(risk)}</li>`).join("");
     const meta = getProgramMeta(item);
-    const projectUrl = getProjectUrl(item);
-    const projectAndEvidenceSame = projectUrl && item.officialUrl && projectUrl === item.officialUrl;
+    const projectLinks = getProjectLinks(item);
+    const evidenceIsSeparate = item.officialUrl && !projectLinks.some((link) => link.url === item.officialUrl);
     return `
       <details class="program-card" data-verdict="${escapeHtml(item.enroll)}">
         <summary>
@@ -107,10 +128,9 @@
             <div class="score-box evidence-box">
               <strong>STEM / 身份证据 · ${escapeHtml(item.evidence)}</strong>
               <p>${escapeHtml(item.stem)}</p>
-              ${(projectUrl || item.officialUrl) ? `<div class="evidence-links">
-                ${projectUrl ? `<a class="official-link" href="${escapeHtml(projectUrl)}" target="_blank" rel="noreferrer">项目官网 ↗</a>` : ""}
-                ${item.officialUrl && !projectAndEvidenceSame ? `<a class="official-link" href="${escapeHtml(item.officialUrl)}" target="_blank" rel="noreferrer">学校官网证据 ↗</a>` : ""}
-                ${projectAndEvidenceSame ? `<a class="official-link" href="${escapeHtml(projectUrl)}" target="_blank" rel="noreferrer">项目官网 / 官网证据 ↗</a>` : ""}
+              ${(projectLinks.length || item.officialUrl) ? `<div class="evidence-links">
+                ${projectLinks.map((link) => `<a class="official-link" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)} ↗</a>`).join("")}
+                ${evidenceIsSeparate ? `<a class="official-link" href="${escapeHtml(item.officialUrl)}" target="_blank" rel="noreferrer">学校官网证据 ↗</a>` : ""}
               </div>` : ""}
             </div>
           </div>
