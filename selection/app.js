@@ -5,6 +5,7 @@
   const list = document.querySelector("#program-list");
   const emptyState = document.querySelector("#empty-state");
   const resultCount = document.querySelector("#result-count");
+  const projectTotal = document.querySelector("#project-total");
   const search = document.querySelector("#search");
   const schoolFilter = document.querySelector("#school-filter");
   const categoryFilter = document.querySelector("#category-filter");
@@ -29,8 +30,6 @@
     "Johns Hopkins Carey — BAAI": { school: "Johns Hopkins", schoolZh: "约翰斯·霍普金斯大学凯瑞商学院", programZh: "商业分析与人工智能理学硕士", projectUrl: "https://carey.jhu.edu/programs/master-science-programs/ms-business-analytics-and-artificial-intelligence" },
     "University of Michigan — Ross MBAn / Applied Economics": { school: "Michigan", schoolZh: "密歇根大学", programZh: "罗斯商业分析硕士 / 应用经济学", projectUrl: "https://michiganross.umich.edu/graduate/master-of-business-analytics" },
     "USC Marshall — MS Business Analytics": { school: "USC", schoolZh: "南加州大学马歇尔商学院", programZh: "商业分析理学硕士", projectUrl: "https://www.marshall.usc.edu/programs/graduate-programs/specialized-masters/ms-business-analytics" },
-    "WUSTL Olin — MS Business Analytics": { school: "WUSTL", schoolZh: "圣路易斯华盛顿大学奥林商学院", programZh: "商业分析理学硕士" },
-    "Rochester Simon — MS Business Analytics": { school: "Rochester", schoolZh: "罗切斯特大学西蒙商学院", programZh: "商业分析理学硕士" },
     "UNC Kenan-Flagler — MS Business Analytics": { school: "UNC", schoolZh: "北卡罗来纳大学教堂山分校凯南-弗拉格勒商学院", programZh: "商业分析理学硕士" },
     "Notre Dame / UC Irvine — MS Business Analytics": { school: "Notre Dame / UC Irvine", schoolZh: "圣母大学 / 加州大学欧文分校", programZh: "商业分析理学硕士" },
     "UC Berkeley — MaCSS": { school: "UC Berkeley", schoolZh: "加州大学伯克利分校", programZh: "计算社会科学硕士", projectUrl: "https://macss.berkeley.edu/" },
@@ -48,7 +47,7 @@
     "HKU — E-commerce & Internet Computing": { school: "HKU", schoolZh: "香港大学", programZh: "电子商务与互联网计算" },
     "CMU Heinz — MISM-BIDA Pathway": { school: "CMU", schoolZh: "卡内基梅隆大学海因茨学院", programZh: "信息系统管理硕士 BIDA 方向" },
     "Penn — MEDS / 环境数据科学（准确名称待核）": { school: "Penn", schoolZh: "宾夕法尼亚大学", programZh: "MEDS / 环境数据科学（准确名称待核）" },
-    "WUSTL / BU / JHU — Quantitative or Mathematical Finance": { school: "WUSTL / BU / JHU", schoolZh: "圣路易斯华盛顿大学 / 波士顿大学 / 约翰斯·霍普金斯大学", programZh: "定量金融或数学金融" },
+    "BU / JHU — Quantitative or Mathematical Finance": { school: "BU / JHU", schoolZh: "波士顿大学 / 约翰斯·霍普金斯大学", programZh: "定量金融或数学金融" },
     "Columbia — Statistics / Actuarial Science": { school: "Columbia", schoolZh: "哥伦比亚大学", programZh: "统计学 / 精算科学" },
     "USC — Accounting / Spatial Economics": { school: "USC", schoolZh: "南加州大学", programZh: "会计学 / 空间经济学" },
     "UCI Merage — MS Business Analytics": { school: "UC Irvine", schoolZh: "加州大学欧文分校梅拉吉商学院", programZh: "商业分析理学硕士", projectUrl: "https://merage.uci.edu/programs/masters/master-science-business-analytics/index.html" },
@@ -72,6 +71,7 @@
   categoryFilter.insertAdjacentHTML("beforeend", unique("cat").map(option).join(""));
   verdictFilter.insertAdjacentHTML("beforeend", ["优先入读", "有条件可读", "只作备选", "不建议入读"].map(option).join(""));
   evidenceFilter.insertAdjacentHTML("beforeend", ["已核实", "部分核实", "待确认", "非美国项目"].map(option).join(""));
+  if (projectTotal) projectTotal.textContent = String(data.length);
 
   function scoreBox(label, score) {
     const safeScore = Math.max(0, Math.min(5, Number(score) || 0));

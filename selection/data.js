@@ -217,7 +217,7 @@ window.SELECTION_DATA = [
       "不能把项目名称里的 AI 当成技术深度证明",
       "不应再视为无条件保底"
     ],
-    "bottomLine": "适合做稳健主申/保守位；拿到后与 USC、Rochester 等就业数据和成本比较。"
+    "bottomLine": "适合做稳健主申/保守位；拿到后与 USC、UNC 等就业数据和成本比较。"
   },
   {
     "name": "University of Michigan — Ross MBAn / Applied Economics",
@@ -254,42 +254,6 @@ window.SELECTION_DATA = [
       "成本高、同类国际学生竞争集中"
     ],
     "bottomLine": "兼顾岗位清晰度、STEM 与求职时间，是你的核心主申之一。"
-  },
-  {
-    "name": "WUSTL Olin — MS Business Analytics",
-    "cat": "BA/数据分析",
-    "apply": "保底",
-    "enroll": "有条件可读",
-    "profileFit": 4,
-    "stayFit": 3.8,
-    "stem": "当前资料为 STEM",
-    "evidence": "已核实",
-    "roles": "商业分析、咨询、供应链/运营分析、金融分析",
-    "fitReason": "应用型分析与商科背景兼容，录取层面比顶级 BA 更现实。",
-    "stayReason": "STEM 有帮助，但城市岗位密度和具体项目招聘结果比学校综合排名更重要。",
-    "risks": [
-      "不能依据中介个案把它当铁保底",
-      "需要核对专业 track、项目长度和最新就业报告"
-    ],
-    "bottomLine": "合格的风险分散位，录取后要用就业数据而非 QS 决定是否读。"
-  },
-  {
-    "name": "Rochester Simon — MS Business Analytics",
-    "cat": "BA/数据分析",
-    "apply": "保底",
-    "enroll": "有条件可读",
-    "profileFit": 4.1,
-    "stayFit": 4,
-    "stem": "当前资料为 STEM",
-    "evidence": "已核实",
-    "roles": "商业分析、定价/营销分析、咨询、运营分析",
-    "fitReason": "商科与分析结合清楚，对国际生背景的可读性通常较好。",
-    "stayReason": "项目的国际生求职支持和分析品牌是优势，但地域和雇主赞助仍需看最新就业报告。",
-    "risks": [
-      "量化课程不能低估",
-      "学校综合 title 不应压过实际就业结果"
-    ],
-    "bottomLine": "优质保守位；若奖学金、学制和就业结果好，可能比某些名校冷门项目更值得读。"
   },
   {
     "name": "UNC Kenan-Flagler — MS Business Analytics",
@@ -604,7 +568,7 @@ window.SELECTION_DATA = [
     "bottomLine": "维持剔除；SPDA 已经是更自然的 Penn 社科+数据选项。"
   },
   {
-    "name": "WUSTL / BU / JHU — Quantitative or Mathematical Finance",
+    "name": "BU / JHU — Quantitative or Mathematical Finance",
     "cat": "降级/剔除",
     "apply": "剔除",
     "enroll": "不建议入读",
@@ -617,7 +581,7 @@ window.SELECTION_DATA = [
     "stayReason": "STEM 与高薪并不能抵消技能错配；专业相关工作要求会把你锁进并不喜欢的方向。",
     "risks": [
       "申请和学习门槛都高",
-      "当前把三校多个项目合并，没有决策价值"
+      "当前把两校多个项目合并，没有决策价值"
     ],
     "bottomLine": "全部剔除，不为 STEM 或高薪想象付出方向错配。"
   },
