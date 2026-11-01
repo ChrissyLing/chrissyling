@@ -1216,6 +1216,8 @@
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&amp;family=Noto+Serif+SC:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="editorial.css?v=20261030-13">
+    <link rel="stylesheet" href="reference-motion.css?v=20261101-1">
+    <script defer src="reference-motion.js?v=20261101-1"></script>
 </head>
 <body>
 
@@ -1251,22 +1253,22 @@
                 </div>
                 <div class="tech-stats">
                     <div class="stat-item">
-                        <span class="stat-num">5</span>
+                        <span class="stat-num" data-count="5">5</span>
                         <span class="stat-label" data-zh="段实习经历" data-en="Internships">段实习经历</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-num">10+</span>
+                        <span class="stat-num" data-count="10" data-suffix="+">10+</span>
                         <span class="stat-label" data-zh="核心项目" data-en="Projects">核心项目</span>
                     </div>
                 </div>
             </div>
-            <div class="hero-image-side"><div class="orbit-label">BUSINESS × TECHNOLOGY × CULTURE</div><div class="hero-photo-note">01 / A CURIOUS MIND</div><img class="collage-photo" src="portfolio_images/landscape-snow.jpg" alt="个人摄影：雪山与山林">
+            <div class="hero-image-side"><img class="hero-reflection" src="portfolio_images/page15_img10.jpeg" alt="个人摄影：白墙与水中倒影"><div class="orbit-label">BUSINESS × TECHNOLOGY × CULTURE</div><div class="hero-photo-note">01 / A CURIOUS MIND</div><img class="collage-photo" src="portfolio_images/hero_portrait.jpg" alt="祝凌昀的冬日肖像">
                 <div class="image-frame">
                     <div class="corner top-left"></div>
                     <div class="corner top-right"></div>
                     <div class="corner bottom-left"></div>
                     <div class="corner bottom-right"></div>
-                    <img src="portfolio_images/portrait-blossom.jpg" alt="Chrissy Zhu">
+                    <img src="portfolio_images/page02_img03.jpeg" alt="祝凌昀手持相机的肖像">
                 </div>
             </div>
         </div>
@@ -1292,18 +1294,26 @@
         <h2 class="section-title bilingual"><span class="lang-zh">关于<em>我。</em></span><span class="lang-en lang-hidden">A little<br><em>about me.</em></span></h2>
         <div class="about-container">
             <div class="about-image">
-                <img src="portfolio_images/page02_img03.jpeg" alt="Chrissy Zhu 手持相机的个人照片"><div class="portrait-note"><span>THE PERSON BEHIND THE WORK</span><p>A curious mind.<br><em>A global outlook.</em></p></div>
+                <img src="portfolio_images/portrait-blossom.jpg" alt="祝凌昀在樱花树下的个人照片"><div class="portrait-note"><span>THE PERSON BEHIND THE WORK</span><p>A curious mind.<br><em>A global outlook.</em></p></div>
             </div>
             <div class="about-text">
-                <h2 class="about-greeting" data-zh="Hello, 我是祝凌昀 👋" data-en="Hello, I'm Chrissy Zhu 👋">Hello, 我是祝凌昀 👋</h2>
-                <h3 data-zh="用产品思维，理解技术与生意" data-en="Where product thinking meets business">用产品思维，理解技术与生意</h3>
+                <h2 class="about-greeting" data-zh="Hello，我是祝凌昀 👋" data-en="Hi, I&#x27;m Lingyun Zhu 👋">Hello，我是祝凌昀 👋</h2>
+                <h3 data-zh="探索商业、产品与 AI，也记录生活中的小小发现。" data-en="Exploring business, products, and AI — while collecting little moments along the way.">探索商业、产品与 AI，也记录生活中的小小发现。</h3>
                 <p class="bilingual">
-                    <span class="lang-zh">我目前就读于北京外国语大学国际商务专业。作为一名具备<span class="highlight">产品思维</span>的运营人，我擅长从复杂的业务逻辑中拆解核心痛点，通过数据驱动决策，实现从0到1的业务搭建与增长。</span>
-                    <span class="lang-en lang-hidden">I am currently studying International Business at BFSU. As an operations professional with a <span class="highlight">Product Mindset</span>, I excel at decomposing core pain points from complex business logic and driving growth through data-backed decisions.</span>
+                    <span class="lang-zh">我是北京外国语大学国际商务专业的学生，2027 年毕业。对商业、科技和人与世界的连接方式充满好奇。</span>
+                    <span class="lang-en lang-hidden">I&#x27;m an International Business undergraduate at Beijing Foreign Studies University, graduating in 2027. I&#x27;m curious about how technology shapes businesses, products, and the way people connect with the world.</span>
                 </p>
                 <p class="bilingual">
-                    <span class="lang-zh">我在智谱 Z.ai 参与 AI 商业化与海外生态运营，也在字节跳动和美团积累了<span class="highlight">策略运营</span>与<span class="highlight">产品运营</span>经验，同时也是一名活跃的新媒体创作者，能够将深度的用户洞察转化为极具影响力的内容。</span>
-                    <span class="lang-en lang-hidden">Alongside AI commercialization and global ecosystem operations at Z.ai, I have gained experience in <span class="highlight">Strategy &amp; Product Operations</span> at top-tier firms like ByteDance and Meituan. Meanwhile, as an active new media creator, I translate deep user insights into impactful content.</span>
+                    <span class="lang-zh">过去几年，我从网易的内容运营、高诚公关的品牌传播，逐渐走向美团的产品运营、字节跳动的电商治理策略，再到 Z.ai 的 AI 国际业务。在不同的团队和项目中，我接触了从用户洞察、数据分析到产品策略和技术商业化的不同环节，也逐渐找到了自己真正感兴趣的方向。</span>
+                    <span class="lang-en lang-hidden">My experiences have taken me from content operations at NetEase and brand communications at Golin to product operations at Meituan, e-commerce strategy at ByteDance, and most recently, global business development at Z.ai. Along the way, I&#x27;ve explored different sides of business, from understanding users and analyzing data to building products and bringing AI into real-world applications.</span>
+                </p>
+                <p class="bilingual">
+                    <span class="lang-zh">工作和学习之外，我喜欢带着相机去不同的地方，观察、旅行、记录生活，也会在小红书分享自己的经历和思考。</span>
+                    <span class="lang-en lang-hidden">Outside of work and school, I love traveling with my camera, discovering new places, and sharing bits of my life and experiences on Xiaohongshu.</span>
+                </p>
+                <p class="bilingual">
+                    <span class="lang-zh">这里收藏了我的一些经历、作品和生活碎片。欢迎随便逛逛 :)</span>
+                    <span class="lang-en lang-hidden">This is my little corner of the internet — a collection of things I&#x27;ve worked on, places I&#x27;ve been, and moments worth remembering. Feel free to look around :)</span>
                 </p>
                 <!-- Education Card -->
                 <div class="edu-card">
@@ -1332,7 +1342,7 @@
         <p class="section-lead" data-zh="从互联网产品运营到 AI 国际商业化，把研究、数据与跨团队协作转化为业务推进。" data-en="From product operations to global AI commercialization: turning research, data, and collaboration into business progress.">从互联网产品运营到 AI 国际商业化，把研究、数据与跨团队协作转化为业务推进。</p></div><figure class="chapter-art perspective-collage" aria-label="鸟类插画、植物蓝晒与几何图形拼贴"><div class="collage-board"><div class="collage-grid-paper" aria-hidden="true"></div><div class="collage-coral" aria-hidden="true"></div><img class="collage-art-sheet" loading="lazy" src="portfolio_images/art-autonomy.webp" alt="Anthropic 视觉素材：鸟类插画、植物蓝晒与四色纸张拼贴"><div class="collage-rings" aria-hidden="true"></div><span class="collage-edition" aria-hidden="true">PERSPECTIVES / 02</span></div><figcaption><a href="https://www.anthropic.com/research/measuring-agent-autonomy" target="_blank" rel="noopener noreferrer">Artwork © Anthropic · via Reference ↗</a></figcaption></figure></div>
 
         <div class="exp-grid">
-<article class="exp-card exp-featured" tabindex="0" data-brand="zai"><span class="exp-index">01</span><div class="exp-brand logo-brand"><img src="portfolio_images/logos/zai.svg" alt="Z.ai logo" width="56" height="56"></div><div class="exp-body"><div class="exp-top"><h3 class="exp-company" data-zh="智谱 Z.ai · 国际业务中心" data-en="Z.ai · International Business">智谱 Z.ai · 国际业务中心</h3><div class="exp-pills"><span class="exp-pill exp-pill--active">2026.08 – 2026.11</span></div></div><p class="exp-role" data-zh="项目经理实习生" data-en="Project Management Intern">项目经理实习生</p><div class="impact-strip"><div><strong>1,600+</strong><span data-zh="企业研究" data-en="Companies researched">企业研究</span></div><div><strong>80+</strong><span data-zh="Startup 申请评估" data-en="Startup reviews">Startup 申请评估</span></div><div><strong>10+</strong><span data-zh="客户与生态会议" data-en="Client &amp; partner meetings">客户与生态会议</span></div></div><ul class="exp-list"><li class="bilingual"><span class="lang-zh"><b>全球市场研究与 GTM：</b>研究 <b>1,600+ 家 AI 企业</b>，筛选 <b>324 家重点候选客户</b>，结合产品、技术栈与模型需求支持海外市场优先级判断。</span><span class="lang-en lang-hidden"><b>Global research & GTM:</b> Researched <b>1,600+ AI companies</b> and shortlisted <b>324 priority prospects</b>, assessing products, technology stacks, and model needs to inform market priorities.</span></li><li class="bilingual"><span class="lang-zh"><b>Startup Program 项目运营：</b>独立评估 <b>80+ 份申请</b>，梳理 LLM 场景、API 用量与成本，协助 Credits 审批、模型测试及 BD 交接。</span><span class="lang-en lang-hidden"><b>Startup Program operations:</b> Independently reviewed <b>80+ applications</b>, assessed LLM use cases, API usage and costs, and supported credit approvals, model trials, and BD handoffs.</span></li><li class="bilingual"><span class="lang-zh"><b>企业与生态项目推进：</b>推进及协调 <b>10+ 场企业与生态会议</b>，独立负责 <b>2 家重点客户</b>的会议协调，并跟进会后需求与 NDA 流程。</span><span class="lang-en lang-hidden"><b>Enterprise & ecosystem coordination:</b> Helped advance and coordinate <b>10+ enterprise and ecosystem meetings</b>; independently coordinated meetings for <b>two priority accounts</b> and followed up on requirements and NDA processes.</span></li></ul><div class="exp-tags"><span class="exp-tag">Global GTM</span><span class="exp-tag">LLM / API</span><span class="exp-tag">Startup Program</span><span class="exp-tag">Ecosystem</span></div></div></article>
+<article class="exp-card exp-featured" tabindex="0" data-brand="zai"><span class="exp-index">01</span><div class="exp-brand logo-brand"><img src="portfolio_images/logos/zai.svg" alt="Z.ai logo" width="56" height="56"></div><div class="exp-body"><div class="exp-top"><h3 class="exp-company" data-zh="智谱 Z.ai · 国际业务中心" data-en="Z.ai · International Business">智谱 Z.ai · 国际业务中心</h3><div class="exp-pills"><span class="exp-pill">2026.08 – 2026.11</span></div></div><p class="exp-role" data-zh="项目经理实习生" data-en="Project Management Intern">项目经理实习生</p><div class="impact-strip impact-strip--four"><div><strong data-count="1600" data-suffix="+">1,600+</strong><span data-zh="企业研究" data-en="Companies researched">企业研究</span></div><div><strong data-count="324" data-suffix="">324</strong><span data-zh="重点候选客户" data-en="Priority prospects">重点候选客户</span></div><div><strong data-count="80" data-suffix="+">80+</strong><span data-zh="Startup 申请评估" data-en="Startup reviews">Startup 申请评估</span></div><div><strong data-count="10" data-suffix="+">10+</strong><span data-zh="会议推进与协调" data-en="Meetings advanced / coordinated">会议推进与协调</span></div></div><ul class="exp-list"><li class="bilingual"><span class="lang-zh"><b>海外市场与客户研究：</b>围绕 Coding Agent、AI Infrastructure 等 6 个赛道研究企业产品、融资阶段与技术栈，筛选 324 家重点候选客户；覆盖 8+ 国家和地区，拓展 300+ 条线索。</span><span class="lang-en lang-hidden"><b>Market &amp; customer research.</b> Researched products, funding stages and tech stacks across six segments including coding agents and AI infrastructure; shortlisted 324 priority prospects and developed 300+ leads across 8+ countries and regions.</span></li><li class="bilingual"><span class="lang-zh"><b>Startup Program 运营：</b>独立评估 80+ 份申请，核实产品场景、团队情况及实际模型用量；准备 API Credits 与试用资源申请，跟进测试反馈、模型集成进度及 BD 交接。</span><span class="lang-en lang-hidden"><b>Startup Program operations.</b> Independently reviewed 80+ applications, checking product use cases, teams and actual model usage; prepared API credit and trial-resource requests and followed up on testing, integration progress and BD handoffs.</span></li><li class="bilingual"><span class="lang-zh"><b>模型需求与成本评估：</b>了解客户现有模型供应商、LLM 工作流和迁移需求，结合 Token 用量、缓存比例与模型价格估算 API 成本，为客户分层和后续方案沟通提供依据。</span><span class="lang-en lang-hidden"><b>Model needs &amp; cost assessment.</b> Assessed existing model providers, LLM workflows and migration needs; estimated API costs from token usage, cache ratios and model pricing to inform qualification and solution discussions.</span></li><li class="bilingual"><span class="lang-zh"><b>重点客户与生态项目：</b>推进及协调 10+ 场企业与生态合作会议，独立跟进 2 家战略客户的跨时区会议、会后沟通及 NDA 流转；研究海外 VC、加速器的项目推荐与 Startup Perks 合作，维护 CRM 状态和后续行动。</span><span class="lang-en lang-hidden"><b>Key accounts &amp; ecosystem projects.</b> Advanced and coordinated 10+ enterprise and ecosystem meetings; independently handled scheduling, follow-up and NDA coordination for two strategic accounts. Researched VC and accelerator referral and startup-perk partnerships, keeping CRM stages and next actions current.</span></li></ul><div class="exp-tags"><span class="exp-tag">Global GTM</span><span class="exp-tag">LLM / API</span><span class="exp-tag">Startup Program</span><span class="exp-tag">Ecosystem</span></div></div></article>
             <article class="exp-card" tabindex="0" data-brand="bytedance">
                 <span class="exp-index">02</span>
                 <div class="exp-brand logo-brand"><img src="portfolio_images/logos/bytedance.png" alt="ByteDance logo" width="56" height="56"></div>
@@ -1340,12 +1350,12 @@
                     <div class="exp-top">
                         <h3 class="exp-company" data-zh="字节跳动 · 抖音电商" data-en="ByteDance · Douyin E-commerce">字节跳动 · 抖音电商</h3>
                         <div class="exp-pills">
-                            <span class="exp-pill exp-pill--active" data-zh="2026.02 – 2026.08" data-en="2026.02 – 2026.08">2026.02 – 2026.08</span>
+                            <span class="exp-pill" data-zh="2026.02 – 2026.08" data-en="2026.02 – 2026.08">2026.02 – 2026.08</span>
                             <span class="exp-pill" data-zh="北京" data-en="Beijing">北京</span>
                         </div>
                     </div>
                     <p class="exp-role" data-zh="策略运营实习生" data-en="Strategy Operations Intern">策略运营实习生</p>
-                    <ul class="exp-list"><li class="bilingual"><span class="lang-zh"><b>耐消品治理策略：</b>参与商家资质、商品宣传及售后治理，结合违规案例梳理规则边界，支持消费者体验与商家经营之间的策略权衡。</span><span class="lang-en lang-hidden"><b>Durable-goods governance:</b> Supported merchant qualification, product claims, and after-sales governance, analyzing cases and rule boundaries to balance consumer experience with merchant operations.</span></li><li class="bilingual"><span class="lang-zh"><b>SQL 分析与异常归因：</b>按类目、品牌、商家与 SKU 拆解违规率、投诉率、退款及负向反馈，定位规则变更、商家结构和系统执行异常。</span><span class="lang-en lang-hidden"><b>SQL analysis & diagnosis:</b> Analyzed violations, complaints, refunds, and negative feedback by category, brand, merchant, and SKU to investigate policy, merchant-mix, and execution anomalies.</span></li><li class="bilingual"><span class="lang-zh"><b>AI 审核优化：</b>分析虚假宣传审核中的误判与漏判，归纳风险特征及规则建议，协同产品、算法与业务团队跟踪优化效果。</span><span class="lang-en lang-hidden"><b>AI-assisted review:</b> Reviewed false positives and missed cases in misleading-claims detection, summarized risk patterns, and worked with product, algorithm, and business teams to assess improvements.</span></li></ul>
+                    <ul class="exp-list"><li class="bilingual"><span class="lang-zh"><b>耐消品治理策略：</b>参与商家资质、商品宣传与售后治理，结合违规案例梳理规则边界，在消费者体验与商家经营之间做策略权衡。</span><span class="lang-en lang-hidden"><b>Durable-goods governance.</b> Worked on merchant qualification, product-claim and after-sales governance, using violation cases to map rule boundaries and weigh consumer experience against merchant operations.</span></li><li class="bilingual"><span class="lang-zh"><b>SQL 指标下钻：</b>按类目、品牌、商家与 SKU 拆解违规、投诉、退款与负向反馈，区分规则变更、商家结构与系统执行带来的异常。</span><span class="lang-en lang-hidden"><b>SQL drill-downs.</b> Broke down violations, complaints, refunds and negative feedback by category, brand, merchant and SKU to separate policy changes, merchant mix and execution issues.</span></li><li class="bilingual"><span class="lang-zh"><b>AI 审核优化：</b>分析虚假宣传审核中的误判与漏判，提炼风险特征与规则建议，与产品、算法和业务团队跟踪优化效果。</span><span class="lang-en lang-hidden"><b>AI-assisted review.</b> Analysed false positives and misses in misleading-claim detection, distilled risk patterns and rule suggestions, and tracked improvements with product, algorithm and business teams.</span></li></ul>
                     <div class="exp-tags">
                         <span class="exp-tag" data-zh="治理链路" data-en="Governance">治理链路</span>
                         <span class="exp-tag" data-zh="SQL" data-en="SQL">SQL</span>
@@ -1366,7 +1376,7 @@
                         </div>
                     </div>
                     <p class="exp-role" data-zh="产品运营实习生" data-en="Product Operations Intern">产品运营实习生</p>
-                    <ul class="exp-list"><li class="bilingual"><span class="lang-zh"><b>经营分析与复盘：</b>支持秒提、远程锁客及团配业务，以 SQL 取数、清洗和搭建看板，围绕 GTV、订单、转化及核销输出 WBR/MBR。</span><span class="lang-en lang-hidden"><b>Business analysis & reviews:</b> Supported pickup, customer-retention, and group-order products with SQL, data cleaning, and dashboards, contributing GTV, order, conversion, and redemption analysis to WBR/MBR.</span></li><li class="bilingual"><span class="lang-zh"><b>订单异常诊断：</b>排查团购订单未映射问题，按商家、订单类型及时间下钻，对照产品规则与商家配置，协同产研定位并跟进修复。</span><span class="lang-en lang-hidden"><b>Order anomaly diagnosis:</b> Investigated unmapped group-buy orders by merchant, order type, and time; reviewed product rules and configurations with product and engineering teams and tracked fixes.</span></li><li class="bilingual"><span class="lang-zh"><b>场景增长与活动运营：</b>参与早餐及交通枢纽秒提项目，支持商家选品、优惠玩法和活动配置，按品牌、SKU、区域复盘订单与交易表现。</span><span class="lang-en lang-hidden"><b>Scenario-based growth:</b> Supported breakfast and transit-hub pickup initiatives through merchant and product selection, promotion setup, and order and transaction analysis by brand, SKU, and region.</span></li></ul>
+                    <div class="impact-strip"><div><strong data-count="3" data-suffix="">3</strong><span data-zh="产品线支持" data-en="Product lines supported">产品线支持</span></div><div><strong>SQL</strong><span data-zh="取数与经营复盘" data-en="Data &amp; business reviews">取数与经营复盘</span></div></div><ul class="exp-list"><li class="bilingual"><span class="lang-zh"><b>经营分析与复盘：</b>用 SQL 取数、清洗并搭建看板，围绕 GTV、订单、转化与核销输出 WBR / MBR 分析。</span><span class="lang-en lang-hidden"><b>Business reviews.</b> Pulled and cleaned data with SQL, built dashboards, and contributed GTV, order, conversion and redemption analysis to weekly and monthly business reviews.</span></li><li class="bilingual"><span class="lang-zh"><b>订单异常诊断：</b>排查团购订单未映射问题，按商家、订单类型与时间下钻，对照产品规则与商家配置，与产研协同定位原因、支持修复。</span><span class="lang-en lang-hidden"><b>Anomaly diagnosis.</b> Investigated unmapped group-buy orders — drilling down by merchant, order type and time, checking product rules and merchant configuration — and worked with product and engineering to locate the cause and support the fix.</span></li><li class="bilingual"><span class="lang-zh"><b>场景增长：</b>参与早餐与交通枢纽秒提项目，支持选品、优惠玩法与活动配置，按品牌、SKU、区域复盘交易表现。</span><span class="lang-en lang-hidden"><b>Scenario growth.</b> Supported breakfast and transit-hub pickup campaigns — merchant and product selection, promotions and campaign setup — and reviewed results by brand, SKU and region.</span></li></ul>
                     <div class="exp-tags">
                         <span class="exp-tag" data-zh="GTV / WBR" data-en="GTV / WBR">GTV / WBR</span>
                         <span class="exp-tag" data-zh="归因分析" data-en="Root Cause">归因分析</span>
@@ -1383,11 +1393,11 @@
                         <h3 class="exp-company" data-zh="IPG Golin · 高诚公关" data-en="IPG Golin · Communications">IPG Golin · 高诚公关</h3>
                         <div class="exp-pills">
                             <span class="exp-pill" data-zh="2025.07 – 2025.11" data-en="2025.07 – 2025.11">2025.07 – 2025.11</span>
-                            <span class="exp-pill" data-zh="上海" data-en="Shanghai">上海</span>
+                            <span class="exp-pill" data-zh="北京" data-en="Beijing">北京</span>
                         </div>
                     </div>
-                    <p class="exp-role" data-zh="品牌传播实习生" data-en="Brand Communication Intern">品牌传播实习生</p>
-                    <ul class="exp-list"><li class="bilingual"><span class="lang-zh"><b>国际品牌传播：</b>主要支持马来西亚航空，并参与卡塔尔航空、大众汽车等项目；参与 <b>10+ 次 Campaign / 传播活动</b>及 <b>50+ 条社媒内容</b>制作支持。</span><span class="lang-en lang-hidden"><b>International brand communications:</b> Primarily supported Malaysia Airlines and contributed to Qatar Airways and Volkswagen projects, including <b>10+ campaigns and communications activities</b> and <b>50+ social content pieces</b>.</span></li><li class="bilingual"><span class="lang-zh"><b>内容本土化与学生市场：</b>本土化英文新闻稿及品牌素材，支持微博、微信、小红书传播，参与 MHexplorer 学生权益梳理、开学季内容及校园合作。</span><span class="lang-en lang-hidden"><b>Localization & student outreach:</b> Localized English releases and brand assets for Weibo, WeChat, and Xiaohongshu; supported MHexplorer student-benefit messaging, back-to-school content, and campus partnerships.</span></li><li class="bilingual"><span class="lang-zh"><b>活动协调与传播复盘：</b>参与成都—吉隆坡航线传播，联系酒店及供应商、整理高管采访资料；跟踪媒体报道与社媒表现，支持 Coverage Report。</span><span class="lang-en lang-hidden"><b>Events & measurement:</b> Supported Chengdu–Kuala Lumpur route communications, hotel and supplier coordination, and executive interview materials; tracked coverage and social performance for reporting.</span></li></ul>
+                    <p class="exp-role" data-zh="国际品牌公关实习生" data-en="International Brand PR Intern">国际品牌公关实习生</p>
+                    <div class="impact-strip"><div><strong data-count="10" data-suffix="+">10+</strong><span data-zh="传播活动参与" data-en="Campaigns supported">传播活动参与</span></div><div><strong data-count="50" data-suffix="+">50+</strong><span data-zh="社媒内容支持" data-en="Social content pieces">社媒内容支持</span></div><div><strong data-count="4" data-suffix="">4</strong><span data-zh="国际品牌项目" data-en="International brand projects">国际品牌项目</span></div></div><ul class="exp-list"><li class="bilingual"><span class="lang-zh"><b>国际品牌传播：</b>以马来西亚航空为核心客户，参与卡塔尔航空、大众汽车等项目，覆盖微博、微信、小红书的内容日历与传播执行。</span><span class="lang-en lang-hidden"><b>International brand communications.</b> Worked mainly on Malaysia Airlines, plus Qatar Airways and Volkswagen projects — content calendars and execution across Weibo, WeChat and Xiaohongshu.</span></li><li class="bilingual"><span class="lang-zh"><b>本土化与学生市场：</b>本土化英文新闻稿与品牌素材；参与 MHexplorer 学生项目的权益梳理、开学季内容与校园合作。</span><span class="lang-en lang-hidden"><b>Localisation &amp; student market.</b> Localised English press releases and brand assets; supported the MHexplorer student programme — benefits messaging, back-to-school content and campus partnerships.</span></li><li class="bilingual"><span class="lang-zh"><b>航线项目与效果复盘：</b>参与成都—吉隆坡航线传播，联系酒店与供应商、整理高管采访资料；跟踪媒体报道与社媒表现，支持 Coverage Report。</span><span class="lang-en lang-hidden"><b>Route launch &amp; measurement.</b> Supported the Chengdu–Kuala Lumpur route campaign — hotel and vendor coordination, executive-interview briefing materials — and tracked coverage and social performance for reporting.</span></li></ul>
                     <div class="exp-tags">
                         <span class="exp-tag" data-zh="品牌全案" data-en="Brand Campaign">品牌全案</span>
                         <span class="exp-tag" data-zh="竞品调研" data-en="Research">竞品调研</span>
@@ -1408,7 +1418,7 @@
                         </div>
                     </div>
                     <p class="exp-role" data-zh="内容运营实习生" data-en="Content Operations Intern">内容运营实习生</p>
-                    <ul class="exp-list"><li class="bilingual"><span class="lang-zh"><b>百万级公众号运营：</b>参与<b>浪潮工作室、看客 Insight 两个百万级粉丝公众号</b>的日常运营，独立策划或执行 <b>12 期选题</b>，完成素材整理、编辑与图文排版。</span><span class="lang-en lang-hidden"><b>Million-follower account operations:</b> Helped operate <b>Wave Studio and Kanke Insight, two WeChat accounts each with over one million followers</b>; independently planned or executed <b>12 content topics</b>, including research, editing, and layout.</span></li><li class="bilingual"><span class="lang-zh"><b>跨平台增长与合作：</b>参与知乎、Bilibili 等渠道分发及 <b>5 次头部账号互推</b>；相关跨平台联动项目约三周新增 <b>8,000+ 粉丝</b>。</span><span class="lang-en lang-hidden"><b>Cross-platform growth:</b> Contributed to distribution on Zhihu and Bilibili and <b>five cross-promotions with leading accounts</b>; the cross-platform initiative gained <b>8,000+ followers in roughly three weeks</b>.</span></li><li class="bilingual"><span class="lang-zh"><b>内容数据与竞品研究：</b>跟踪阅读、分享与互动表现，持续监测 <b>10+ 同领域账号</b>，输出周度观察及选题建议，支持内容复盘与优化。</span><span class="lang-en lang-hidden"><b>Content analytics & research:</b> Tracked readership, sharing, and engagement; monitored <b>10+ comparable accounts</b> and produced weekly observations and topic recommendations.</span></li></ul>
+                    <div class="impact-strip impact-strip--four"><div><strong data-count="8000" data-suffix="+">8,000+</strong><span data-zh="联动项目三周新增粉丝" data-en="Initiative followers in ~3 weeks">联动项目三周新增粉丝</span></div><div><strong data-count="500" data-suffix="K+">500K+</strong><span data-zh="合作单日最高曝光" data-en="Peak partnership exposure / day">合作单日最高曝光</span></div><div><strong data-count="12" data-suffix="">12</strong><span data-zh="选题策划或执行" data-en="Topics planned or executed">选题策划或执行</span></div><div><strong data-count="5" data-suffix="">5</strong><span data-zh="头部账号互推" data-en="Leading-account cross-promotions">头部账号互推</span></div></div><ul class="exp-list"><li class="bilingual"><span class="lang-zh"><b>百万级公众号运营：</b>参与「浪潮工作室」「看客 Insight」两个百万粉丝公众号的日常运营，独立策划或执行 12 期选题。</span><span class="lang-en lang-hidden"><b>Million-follower accounts.</b> Helped run Wave Studio and Kanke Insight — two WeChat accounts with over a million followers each — independently planning or executing 12 topics.</span></li><li class="bilingual"><span class="lang-zh"><b>跨平台增长：</b>参与知乎、B 站分发与 5 次头部账号互推；联动项目约三周新增 8,000+ 粉丝，合作单日最高曝光 50 万+。</span><span class="lang-en lang-hidden"><b>Cross-platform growth.</b> Distribution on Zhihu and Bilibili plus five cross-promotions with leading accounts; the initiative added 8,000+ followers in about three weeks, with peak single-day exposure above 500K.</span></li><li class="bilingual"><span class="lang-zh"><b>内容数据与竞品研究：</b>追踪阅读、分享与互动，持续监测 10+ 同领域账号，输出周度观察与选题建议。</span><span class="lang-en lang-hidden"><b>Content analytics.</b> Tracked reads, shares and engagement, monitored 10+ peer accounts, and wrote weekly observations and topic recommendations.</span></li></ul>
                     <div class="exp-tags">
                         <span class="exp-tag" data-zh="百万级账号" data-en="Million-follower Accounts">百万级账号</span>
                         <span class="exp-tag" data-zh="内容策略" data-en="Content Strategy">内容策略</span>
@@ -1433,40 +1443,7 @@
                 <figcaption><span>RESEARCH → INSIGHT → BUILD</span><a href="https://www.anthropic.com/research/expectations-for-the-future" target="_blank" rel="noopener noreferrer">Artwork © Anthropic · via Reference ↗</a></figcaption>
             </figure>
         </div>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h4 data-zh="硬核技能" data-en="Hard Skills">硬核技能</h4>
-                <div class="skill-list">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">Excel (VBA)</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h4 data-zh="AI 效能" data-en="AI Efficiency">AI 效能</h4>
-                <div class="skill-list">
-                    <span class="skill-tag">Coze</span>
-                    <span class="skill-tag">Manus</span>
-                    <span class="skill-tag">Hermes Agent</span>
-                    <span class="skill-tag">Openclaw</span>
-                    <span class="skill-tag">Dify</span>
-                    <span class="skill-tag">Grok Bot</span>
-                    <span class="skill-tag" data-zh="Seedance 视频生成" data-en="Seedance · Video Generation">Seedance 视频生成</span>
-                    <span class="skill-tag">Prompt Engineering</span>
-                    <span class="skill-tag">Workflow Design</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h4 data-zh="内容与设计" data-en="Content & Design">内容与设计</h4>
-                <div class="skill-list">
-                    <span class="skill-tag">Premiere</span>
-                    <span class="skill-tag">Photoshop</span>
-                    <span class="skill-tag">剪映</span>
-                    <span class="skill-tag">秀米/可画</span>
-                </div>
-            </div>
-        </div>
+        <div class="skills-grid capability-grid"><div class="skill-category capability-card"><span class="capability-index">A</span><h4 class="" data-zh="运营与策略分析" data-en="Operations &amp; Strategy">运营与策略分析</h4><p class="capability-summary" data-zh="把业务问题拆成指标、维度与原因。" data-en="Investigate business questions through data.">把业务问题拆成指标、维度与原因。</p><dl><dt class="" data-zh="SQL" data-en="SQL">SQL</dt><dd class="" data-zh="美团 WBR / MBR 取数 · 抖音电商治理指标下钻" data-en="Business reviews at Meituan · Governance analysis at Douyin">美团 WBR / MBR 取数 · 抖音电商治理指标下钻</dd><dt class="" data-zh="指标拆解与异常归因" data-en="Metrics &amp; diagnosis">指标拆解与异常归因</dt><dd class="" data-zh="订单未映射排查 · 治理指标异常分析" data-en="Unmapped orders · Governance metric anomalies">订单未映射排查 · 治理指标异常分析</dd><dt class="" data-zh="市场研究与线索筛选" data-en="Market research &amp; qualification">市场研究与线索筛选</dt><dd class="" data-zh="研究 1,600+ 家企业，筛选 324 家重点候选客户" data-en="1,600+ companies researched · 324 priority prospects">研究 1,600+ 家企业，筛选 324 家重点候选客户</dd><dt class="" data-zh="CRM 与 Pipeline 管理" data-en="CRM &amp; pipeline management">CRM 与 Pipeline 管理</dt><dd class="" data-zh="线索状态、BD 交接与 DBR / WBR" data-en="Lead stages, BD handoffs and business reviews">线索状态、BD 交接与 DBR / WBR</dd><dt class="" data-zh="Python · Excel (VBA) · C++" data-en="Python · Excel (VBA) · C++">Python · Excel (VBA) · C++</dt><dd class="" data-zh="数据处理与自动化" data-en="Data processing &amp; automation">数据处理与自动化</dd></dl><span class="capability-watermark" aria-hidden="true">A</span></div><div class="skill-category capability-card"><span class="capability-index">B</span><h4 class="" data-zh="AI 杠杆" data-en="AI in Practice">AI 杠杆</h4><p class="capability-summary" data-zh="评估模型的使用成本，也亲手搭建工作流。" data-en="Evaluate model costs and build working tools.">评估模型的使用成本，也亲手搭建工作流。</p><dl><dt class="" data-zh="LLM API 商业化" data-en="LLM API commercialization">LLM API 商业化</dt><dd class="" data-zh="用量、成本与模型迁移评估" data-en="Usage, cost and model migration assessment">用量、成本与模型迁移评估</dd><dt class="" data-zh="Dify Chatflow · RAG" data-en="Dify Chatflow · RAG">Dify Chatflow · RAG</dt><dd class="" data-zh="独立搭建 IELTS Master 多角色 Agent" data-en="Built the IELTS Master multi-role agent">独立搭建 IELTS Master 多角色 Agent</dd><dt class="" data-zh="Coze · Manus · Hermes Agent" data-en="Coze · Manus · Hermes Agent">Coze · Manus · Hermes Agent</dt><dd class="" data-zh="智能体与日常工作流" data-en="Agents &amp; everyday workflows">智能体与日常工作流</dd><dt class="" data-zh="Openclaw · Grok Bot · Seedance" data-en="Openclaw · Grok Bot · Seedance">Openclaw · Grok Bot · Seedance</dt><dd class="" data-zh="Agent 工具与 AI 视频生成" data-en="Agent tools &amp; AI video generation">Agent 工具与 AI 视频生成</dd><dt class="" data-zh="Prompt &amp; Workflow Design" data-en="Prompt &amp; Workflow Design">Prompt &amp; Workflow Design</dt><dd class="" data-zh="任务拆解、提示词与流程编排" data-en="Task breakdown, prompting and orchestration">任务拆解、提示词与流程编排</dd></dl><span class="capability-watermark" aria-hidden="true">B</span></div><div class="skill-category capability-card"><span class="capability-index">C</span><h4 class="" data-zh="内容与设计" data-en="Content &amp; Design">内容与设计</h4><p class="capability-summary" data-zh="摄影、写作，以及内容的视觉呈现。" data-en="Photography, writing and visual storytelling.">摄影、写作，以及内容的视觉呈现。</p><dl><dt class="" data-zh="摄影" data-en="Photography">摄影</dt><dd class="" data-zh="风光、街头与人像" data-en="Landscape, street &amp; portraits">风光、街头与人像</dd><dt class="" data-zh="小红书创作" data-en="Xiaohongshu writing">小红书创作</dt><dd class="" data-zh="累计 22,000+ 点赞" data-en="22,000+ total likes">累计 22,000+ 点赞</dd><dt class="" data-zh="Premiere · Photoshop · 剪映" data-en="Premiere · Photoshop · Jianying">Premiere · Photoshop · 剪映</dt><dd class="" data-zh="剪辑与修图" data-en="Video editing &amp; photo retouching">剪辑与修图</dd><dt class="" data-zh="秀米 · 可画" data-en="Xiumi · Canva">秀米 · 可画</dt><dd class="" data-zh="公众号排版与视觉物料" data-en="WeChat layouts &amp; visual assets">公众号排版与视觉物料</dd><dt class="" data-zh="中英双语写作" data-en="Chinese &amp; English writing">中英双语写作</dt><dd class="" data-zh="新闻稿本土化 · 英文商务外联" data-en="Press localisation · Business outreach">新闻稿本土化 · 英文商务外联</dd></dl><span class="capability-watermark" aria-hidden="true">C</span></div></div>
     </section>
 
     <!-- Portfolio Section -->
@@ -1480,22 +1457,18 @@
 
         <!-- Xiaohongshu Tab -->
         <div id="xhs" class="tab-content active">
-            <div class="xhs-stats">
+<div class="xhs-editorial-copy"><span class="xhs-kicker">WORDS / EVERYDAY LIFE</span><h3 class="" data-zh="小红书创作" data-en="Personal essays">小红书创作</h3><p class="xhs-intro" data-zh="写城市、成长与实习生活，也记录那些想留下来的瞬间。" data-en="Writing about city life, growing up and internships, and the moments I want to remember.">写城市、成长与实习生活，也记录那些想留下来的瞬间。</p>            <div class="xhs-stats">
                 <div class="stat-item">
-                    <div class="stat-value">22,000+</div>
+                    <div class="stat-value" data-count="22000" data-suffix="+">22,000+</div>
                     <div class="stat-label" data-zh="总点赞" data-en="Total Likes">总点赞</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-value">4,900+</div>
+                    <div class="stat-value" data-count="4900" data-suffix="+">4,900+</div>
                     <div class="stat-label" data-zh="总收藏" data-en="Total Saves">总收藏</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-value">1,300+</div>
+                    <div class="stat-value" data-count="1300" data-suffix="+">1,300+</div>
                     <div class="stat-label" data-zh="总评论" data-en="Total Comments">总评论</div>
-                </div>
-                <div class="stat-item" style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 30px;">
-                    <div class="stat-value" style="color: var(--text-main); font-size: 1.1rem;">@群青日和</div>
-                    <div class="stat-label">ID: zly98963881</div>
                 </div>
             </div>
             <div class="xhs-profile-wrap">
@@ -1503,43 +1476,45 @@
                     <img src="portfolio_images/xhs_profile.jpg" alt="小红书主页">
                     <span class="xhs-profile-cta bilingual">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        <span class="lang-zh">点击访问主页</span>
-                        <span class="lang-en lang-hidden">Visit Profile</span>
+                        <span class="lang-zh">↗ 点击访问主页</span>
+                        <span class="lang-en lang-hidden">↗ Visit profile</span>
                     </span>
                 </a>
             </div>
-            <div class="xhs-grid">
+</div><div class="xhs-editorial-gallery"><div class="xhs-gallery-guide"><span>SELECTED POSTS / 01—06</span><span class="" data-zh="横向滑动浏览 →" data-en="Scroll to explore →">横向滑动浏览 →</span></div>            <div class="xhs-grid">
                 <div class="mockup">
-                    <img src="portfolio_images/xhs_01.png" alt="XHS 01">
-                    <div class="mockup-caption" data-zh="《这不是你为自己选的北京吗》" data-en="Beijing by Choice">《这不是你为自己选的北京吗》</div>
-                </div>
-                <div class="mockup">
-                    <img src="portfolio_images/xhs_02.png" alt="XHS 02">
-                    <div class="mockup-caption" data-zh="《在晴天看见十七岁的那场初雪》" data-en="Seventeen's First Snow">《在晴天看见十七岁的那场初雪》</div>
-                </div>
-                <div class="mockup">
-                    <img src="portfolio_images/xhs_03.png" alt="XHS 03">
-                    <div class="mockup-caption" data-zh="《在北京谈一场大城小爱》" data-en="Love in a Big City">《在北京谈一场大城小爱》</div>
-                </div>
-                <div class="mockup">
-                    <img src="portfolio_images/xhs_04.png" alt="XHS 04">
+                    <img src="portfolio_images/xhs_04.png" alt="XHS 04"><span class="post-index">POST 04</span>
                     <div class="mockup-caption" data-zh="《大厂实习是二十一世纪的出租屋文学》" data-en="Big Tech Internship Literature">《大厂实习是二十一世纪的出租屋文学》</div>
                 </div>
-                <div class="mockup">
-                    <img src="portfolio_images/xhs_05.png" alt="XHS 05">
+<div class="mockup">
+                    <img src="portfolio_images/xhs_05.png" alt="XHS 05"><span class="post-index">POST 05</span>
                     <div class="mockup-caption" data-zh="《那天我20岁，在我一生中的玻璃时代》" data-en="My 20th Glass Age">《那天我20岁，在我一生中的玻璃时代》</div>
                 </div>
-                <div class="mockup">
-                    <img src="portfolio_images/xhs_06.png" alt="XHS 06">
+<div class="mockup">
+                    <img src="portfolio_images/xhs_06.png" alt="XHS 06"><span class="post-index">POST 06</span>
                     <div class="mockup-caption" data-zh="《再见，我少女时代的终章》" data-en="Farewell to Girlhood">《再见，我少女时代的终章》</div>
                 </div>
+<div class="mockup">
+                    <img src="portfolio_images/xhs_01.png" alt="XHS 01"><span class="post-index">POST 01</span>
+                    <div class="mockup-caption" data-zh="《这不是你为自己选的北京吗》" data-en="Beijing by Choice">《这不是你为自己选的北京吗》</div>
+                </div>
+<div class="mockup">
+                    <img src="portfolio_images/xhs_02.png" alt="XHS 02"><span class="post-index">POST 02</span>
+                    <div class="mockup-caption" data-zh="《在晴天看见十七岁的那场初雪》" data-en="Seventeen's First Snow">《在晴天看见十七岁的那场初雪》</div>
+                </div>
+<div class="mockup">
+                    <img src="portfolio_images/xhs_03.png" alt="XHS 03"><span class="post-index">POST 03</span>
+                    <div class="mockup-caption" data-zh="《在北京谈一场大城小爱》" data-en="Love in a Big City">《在北京谈一场大城小爱》</div>
+                </div>
             </div>
+<div class="xhs-rail-controls"><button type="button" data-xhs-prev aria-label="上一组作品 / Previous posts">←</button><span class="xhs-rail-progress" aria-hidden="true"><i></i></span><button type="button" data-xhs-next aria-label="下一组作品 / Next posts">→</button></div>
+        </div>
         </div>
 
         <!-- Photo Tab -->
         <div id="photo" class="tab-content">
             <div class="photo-editorial-heading"><div><span class="photo-overline">PERSONAL PHOTOGRAPHY / SELECTED FRAMES</span><h3 class="bilingual"><span class="lang-zh">在<span>山野</span>与城市之间，<br><em>记录光影。</em></span><span class="lang-en lang-hidden">Between wild<br>and <em>urban light.</em></span></h3></div><div class="photo-signature">Through my lens<span>CHRISSY ZHU — PHOTO JOURNAL</span></div></div>
-            <div class="gallery-grid curated-gallery"><figure class="gallery-item frame-snow"><img loading="lazy" src="portfolio_images/landscape-snow.jpg" alt="山野"><figcaption><span class="frame-number">01 /</span><span data-zh="山野" data-en="Wilderness">山野</span></figcaption></figure><figure class="gallery-item frame-town"><img loading="lazy" src="portfolio_images/landscape-town.jpg" alt="远望"><figcaption><span class="frame-number">02 /</span><span data-zh="远望" data-en="A wider view">远望</span></figcaption></figure><figure class="gallery-item frame-wide"><img loading="lazy" src="portfolio_images/page15_img10.jpeg" alt="留白"><figcaption><span class="frame-number">03 /</span><span data-zh="留白" data-en="Stillness">留白</span></figcaption></figure><figure class="gallery-item frame-night"><img loading="lazy" src="portfolio_images/page15_img08.jpeg" alt="夜色"><figcaption><span class="frame-number">04 /</span><span data-zh="夜色" data-en="After dark">夜色</span></figcaption></figure><figure class="gallery-item frame-tree"><img loading="lazy" src="portfolio_images/page17_img10.jpeg" alt="林间"><figcaption><span class="frame-number">05 /</span><span data-zh="林间" data-en="In the woods">林间</span></figcaption></figure><figure class="gallery-item frame-street"><img loading="lazy" src="portfolio_images/page15_img12.jpeg" alt="城市脉搏"><figcaption><span class="frame-number">06 /</span><span data-zh="城市脉搏" data-en="City pulse">城市脉搏</span></figcaption></figure><figure class="gallery-item frame-water"><img loading="lazy" src="portfolio_images/page17_img09.jpeg" alt="水面"><figcaption><span class="frame-number">07 /</span><span data-zh="水面" data-en="By the water">水面</span></figcaption></figure><figure class="gallery-item frame-bike"><img loading="lazy" src="portfolio_images/page17_img08.jpeg" alt="日常切片"><figcaption><span class="frame-number">08 /</span><span data-zh="日常切片" data-en="Everyday fragments">日常切片</span></figcaption></figure><figure class="gallery-item frame-room"><img loading="lazy" src="portfolio_images/page17_img11.jpeg" alt="一室光影"><figcaption><span class="frame-number">09 /</span><span data-zh="一室光影" data-en="An afternoon indoors">一室光影</span></figcaption></figure></div>
+            <div class="gallery-grid curated-gallery"><figure class="gallery-item frame-snow"><img loading="lazy" src="portfolio_images/landscape-snow.jpg" alt="山野"><figcaption><span class="frame-number">01 /</span><span data-zh="山野" data-en="Wilderness">山野</span></figcaption></figure><figure class="gallery-item frame-town"><img loading="lazy" src="portfolio_images/landscape-town.jpg" alt="远望"><figcaption><span class="frame-number">02 /</span><span data-zh="远望" data-en="A wider view">远望</span></figcaption></figure><figure class="gallery-item frame-wide"><img loading="lazy" src="portfolio_images/page15_img10.jpeg" alt="留白"><figcaption><span class="frame-number">03 /</span><span data-zh="留白" data-en="Stillness">留白</span></figcaption></figure><figure class="gallery-item frame-night"><img loading="lazy" src="portfolio_images/page15_img08.jpeg" alt="夜色"><figcaption><span class="frame-number">04 /</span><span data-zh="夜色" data-en="After dark">夜色</span></figcaption></figure><figure class="gallery-item frame-roof"><img loading="lazy" src="portfolio_images/page15_img11.jpeg" alt="雪中建筑"><figcaption><span class="frame-number">05 /</span><span data-zh="雪中建筑" data-en="Architecture in snow">雪中建筑</span></figcaption></figure><figure class="gallery-item frame-tree"><img loading="lazy" src="portfolio_images/page17_img10.jpeg" alt="林间"><figcaption><span class="frame-number">06 /</span><span data-zh="林间" data-en="In the woods">林间</span></figcaption></figure><figure class="gallery-item frame-street"><img loading="lazy" src="portfolio_images/page15_img12.jpeg" alt="城市脉搏"><figcaption><span class="frame-number">07 /</span><span data-zh="城市脉搏" data-en="City pulse">城市脉搏</span></figcaption></figure><figure class="gallery-item frame-water"><img loading="lazy" src="portfolio_images/page17_img09.jpeg" alt="水面"><figcaption><span class="frame-number">08 /</span><span data-zh="水面" data-en="By the water">水面</span></figcaption></figure><figure class="gallery-item frame-bike"><img loading="lazy" src="portfolio_images/page17_img08.jpeg" alt="日常切片"><figcaption><span class="frame-number">09 /</span><span data-zh="日常切片" data-en="Everyday fragments">日常切片</span></figcaption></figure><figure class="gallery-item frame-room"><img loading="lazy" src="portfolio_images/page17_img11.jpeg" alt="一室光影"><figcaption><span class="frame-number">10 /</span><span data-zh="一室光影" data-en="An afternoon indoors">一室光影</span></figcaption></figure></div>
         </div>
 
         <!-- Viz Tab -->
@@ -1556,7 +1531,7 @@
     <section id="projects" class="reveal"><div class="eyebrow">05 / BUILT WITH CURIOSITY</div>
         <div class="chapter-intro"><div class="chapter-copy">        <h2 class="section-title bilingual"><span class="lang-zh">想法，<em>成为作品。</em></span><span class="lang-en lang-hidden">Ideas,<br><em>made real.</em></span></h2>
         <p class="section-lead" data-zh="从 AI Agent 到独立 Web 小工具——用代码把真实需求变成可运行的产品。" data-en="From AI agents to standalone web tools — turning real needs into runnable products through code.">从 AI Agent 到独立 Web 小工具——用代码把真实需求变成可运行的产品。</p></div><figure class="chapter-art"><img loading="lazy" src="portfolio_images/art-making.webp" alt="黄铜钥匙与制图模板拼贴"><figcaption><a href="https://www.anthropic.com/research/teaching-claude-why" target="_blank" rel="noopener noreferrer">Artwork © Anthropic · via Reference ↗</a></figcaption></figure></div>
-        <div class="ai-project">
+        <div class="ai-project product-case">
             <div class="ai-header">
                 <div class="ai-info">
                     <h3 data-zh="IELTS Master — 多角色雅思 AI Agent" data-en="IELTS Master — Multi-role AI Agent">IELTS Master — 多角色雅思 AI Agent</h3>
@@ -1587,17 +1562,18 @@
                         <div class="project-details-block">
                             <strong data-zh="3. RAG 与工程闭环" data-en="3. RAG &amp; Engineering Loop">3. RAG 与工程闭环</strong>
                             <span class="bilingual">
-                                <span class="lang-zh">挂载剑桥官方范文等向量数据库，开启 N-to-1 召回并配合 Rerank 解决幻觉；集成 Next Question Suggestions 与人类反馈标注（Annotation）校准系统。</span>
+                                <span class="lang-zh">挂载剑桥官方范文等向量数据库，开启 N-to-1 召回并配合 Rerank 减少幻觉；集成 Next Question Suggestions 与人类反馈标注（Annotation）校准系统。</span>
                                 <span class="lang-en lang-hidden">Mounted vector databases with N-to-1 recall and Rerank; integrated Next Question Suggestions and human feedback (Annotation) for calibration.</span>
                             </span>
                         </div>
                     </div>
                 </div>
-                <div style="text-align: right; color: var(--accent-pink); font-size: 0.9rem; flex-shrink: 0;" data-zh="产品全闭环实践" data-en="End-to-end Product Practice">产品全闭环实践</div>
+
             </div>
-            <div class="iframe-container">
+            <div class="iframe-container demo-on-demand">
+                <div class="demo-intro"><div class="demo-window-bar"><span aria-hidden="true">● ● ●</span><span>IELTS MASTER · LIVE</span></div><div class="demo-conversation"><span class="demo-avatar" aria-hidden="true">M</span><p data-zh="你好，我是你的雅思练习助手。选择一个模式，开始今天的练习。" data-en="Hi, I’m your IELTS practice assistant. Choose a mode to begin.">你好，我是你的雅思练习助手。选择一个模式，开始今天的练习。</p></div><ul class="demo-mode-list"><li><span>01</span><b data-zh="写作批改" data-en="Writing feedback">写作批改</b><small>TR / CC / LR / GRA</small></li><li><span>02</span><b data-zh="口语模拟" data-en="Speaking practice">口语模拟</b><small>PART 1 — 3</small></li><li><span>03</span><b data-zh="词汇与语法" data-en="Vocabulary &amp; grammar">词汇与语法</b><small>VOCABULARY</small></li><li><span>04</span><b data-zh="听力与阅读错题" data-en="Listening &amp; reading review">听力与阅读错题</b><small>REVIEW</small></li></ul><button class="tech-btn primary-tech" type="button" data-demo-launch data-zh="启动在线演示 ▶" data-en="Launch live demo ▶">启动在线演示 ▶</button><a class="demo-external" href="https://udify.app/chatbot/Rsvp6Xg7yDiC4Guw" target="_blank" rel="noopener noreferrer" data-zh="或在新窗口打开 ↗" data-en="Open in a new tab ↗">或在新窗口打开 ↗</a></div>
                 <iframe
-                    src="https://udify.app/chatbot/Rsvp6Xg7yDiC4Guw"
+                    data-src="https://udify.app/chatbot/Rsvp6Xg7yDiC4Guw"
                     style="width: 100%; height: 600px; min-height: 500px; border: none;"
                     frameborder="0"
                     allow="microphone"
@@ -1606,9 +1582,7 @@
                     title="IELTS Master AI Agent">
                 </iframe>
             </div>
-            <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-muted); text-align: center;"
-               data-zh="👇 体验完整的 AI 雅思教学流程 👇"
-               data-en="👇 Experience the full AI IELTS tutoring workflow 👇">👇 体验完整的 AI 雅思教学流程 👇</p>
+
         </div>
 
         <h3 class="projects-subtitle" data-zh="更多 Coding 尝试" data-en="More Coding Experiments">更多 Coding 尝试</h3>
@@ -1705,7 +1679,7 @@
         <h2 class="section-title bilingual"><span class="lang-zh">下一步，<em>一起。</em></span><span class="lang-en lang-hidden">Let’s<br><em>connect.</em></span></h2>
         <div class="contact-spread">
         <div class="contact-container">
-            <p data-zh="如果您对我感兴趣或有任何合作意向，欢迎通过以下方式联系我：" 
+            <p data-zh="如果您对我感兴趣或有任何合作意向，欢迎通过以下方式联系我："
                data-en="If you are interested in my profile or have any cooperation inquiries, feel free to reach out:">如果您对我感兴趣或有任何合作意向，欢迎通过以下方式联系我：
             </p>
             <div class="contact-links">
@@ -1723,7 +1697,7 @@
                 </a>
             </div>
         </div>
-<figure class="contact-art" aria-label="个人摄影拼贴"><div class="contact-orbit" aria-hidden="true"></div><img class="contact-scene" loading="lazy" src="portfolio_images/hero_portrait.jpg" alt="祝凌昀的冬日肖像"><img class="contact-inset" loading="lazy" src="portfolio_images/portrait-mountains.jpg" alt="祝凌昀的山野旅行肖像"><figcaption><span>LET’S CONNECT</span><span>CHRISSY / OUTSIDE THE FRAME</span></figcaption></figure>
+<figure class="contact-art" aria-label="个人摄影拼贴"><div class="contact-orbit" aria-hidden="true"></div><img class="contact-scene" loading="lazy" src="portfolio_images/portrait-mountains.jpg" alt="祝凌昀在雪山与高原湖泊前"><img class="contact-inset" loading="lazy" src="portfolio_images/landscape-snow.jpg" alt="旅行中拍摄的雪山与经幡"><figcaption><span>LET’S CONNECT</span><span>CHRISSY / OUTSIDE THE FRAME</span></figcaption></figure>
         </div>
     </section>
 
@@ -1745,7 +1719,7 @@
         function type() {
             const currentRoles = currentLang === 'zh' ? rolesZh : rolesEn;
             const fullTxt = currentRoles[roleIdx];
-            
+
             if (isDeleting) {
                 typewriterEl.textContent = fullTxt.substring(0, charIdx - 1);
                 charIdx--;
@@ -1770,12 +1744,12 @@
 
         function toggleLanguage() {
             currentLang = currentLang === 'zh' ? 'en' : 'zh';
-            
+
             document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
             // Update UI
             document.getElementById('lang-zh').classList.toggle('active');
             document.getElementById('lang-en').classList.toggle('active');
-            
+
             // Handle data-zh/data-en elements
             document.querySelectorAll('[data-zh]').forEach(el => {
                 if (el.classList.contains('bilingual')) return;
@@ -1817,9 +1791,20 @@
             type();
 
             // 首屏及以下区块立即可见，避免 file:// 打开时长时间空白
-            document.querySelectorAll('.reveal, .exp-card, .side-project-card').forEach(el => {
-                el.classList.add('visible');
-            });
+            const revealItems = document.querySelectorAll('.reveal, .exp-card, .side-project-card');
+            if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                const revealObserver = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.04, rootMargin: '0px 0px -20px 0px' });
+                revealItems.forEach(el => revealObserver.observe(el));
+            } else {
+                revealItems.forEach(el => el.classList.add('visible'));
+            }
 
             // Nav scroll highlight
             const navLinks = document.querySelectorAll('#main-nav a');
